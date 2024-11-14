@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
-import { blue, green, neutral, sky, red, yellow } from "tailwindcss/colors";
+import { blue, green, slate, sky, red, yellow } from "tailwindcss/colors";
 
 export default {
   darkMode: ["class"],
@@ -19,7 +19,7 @@ export default {
         },
         secondary: {
           ...blue,
-          DEFAULT: neutral[500],
+          DEFAULT: slate[500],
         },
         info: {
           ...blue,
