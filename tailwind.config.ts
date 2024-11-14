@@ -13,6 +13,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        black: slate[950],
         primary: {
           ...blue,
           DEFAULT: blue[500],
