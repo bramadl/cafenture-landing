@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import { Footer } from "@cafenture/components/core/footer";
+import { Navigation } from "@cafenture/components/core/navigation";
 import { ReactLenis } from "@cafenture/lib/react-lenis";
 import "./globals.css";
 
@@ -23,7 +25,11 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} antialiased`}>
       <body>
-        <ReactLenis root>{children}</ReactLenis>
+        <ReactLenis root>
+          <Navigation />
+          {children}
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );
