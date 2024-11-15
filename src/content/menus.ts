@@ -5,6 +5,12 @@ export interface MenuUrl {
   url: string;
 }
 
+export const HomeUrl: MenuUrl = {
+  url: "/",
+  label: "Beranda",
+  description: "",
+};
+
 export const CafentureStoryUrl: MenuUrl = {
   url: "/stories",
   label: "Mengenal Cafenture",
@@ -23,31 +29,33 @@ export const CafentureSpotlightsUrl: MenuUrl = {
   url: "/platforms/spotlights",
   label: "Cafenture Spotlights",
   description:
-    "Baca tulisan kami yang menawarkan cerita, pengalaman, dan pelajaran.",
+    "Baca tulisan tim kami yang menawarkan cerita, pengalaman, dan pembelajaran.",
 };
 
 export const CafentureMembershipUrl: MenuUrl = {
   url: "/platforms/memberships",
   label: "Cafenture Memberships",
-  description: "",
+  description: "Lebih dalam mengenal keuntungan dari keanggotaan Cafenture",
 };
 
 export const ModuleAccountManagementUrl: MenuUrl = {
   url: "/modules/account-management",
   label: "Account Management",
-  description: "",
+  description:
+    "Modul pengelolaan akun yang mengontrol personalisasi dan rekomendasi.",
 };
 
 export const ModuleCoffeeShopDiscoveryUrl: MenuUrl = {
   url: "/modules/coffee-shop-discovery",
   label: "Coffee Shop Discovery",
-  description: "",
+  description: "Modul penjelajahan kedai kopi yang didukung teknologi terkini.",
 };
 
 export const ModuleCoffeeShopInformationUrl: MenuUrl = {
   url: "/modules/coffee-shop-information",
   label: "Coffee Shop Profile",
-  description: "",
+  description:
+    "Modul informasi kedai kopi yang memiliki data dan informasi terlengkap.",
 };
 
 export const HelpCenterUrl: MenuUrl = {
@@ -87,6 +95,13 @@ export const EmailContactUrl: MenuUrl = {
 export const WhatsAppContactUrl: MenuUrl = {
   url: "https://wa.me/6285216388926",
   label: "+62 852 1638 8926",
+  description: "",
+  external: true,
+};
+
+export const InstagramUrl: MenuUrl = {
+  url: "#",
+  label: "cafenture.indonesia",
   description: "",
   external: true,
 };

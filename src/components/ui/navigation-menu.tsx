@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
+import { CaretDown } from "@phosphor-icons/react";
 import { cva } from "class-variance-authority";
-import { ChevronDown } from "lucide-react";
 
 import { cn } from "@cafenture/lib/utils";
 
@@ -45,7 +45,7 @@ const navigationMenuTriggerStyle = cva([
   "w-max h-10 px-4 py-2 rounded-md text-sm font-medium focus:outline-none",
   "[&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   "data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50",
-  "bg-white hover:bg-slate-100 focus:bg-slate-100",
+  "hover:bg-slate-100 focus:bg-slate-100",
   "text-black hover:text-slate-900 focus:text-slate-900",
   "disabled:pointer-events-none disabled:opacity-50 transition-colors",
 ]);
@@ -60,7 +60,7 @@ const NavigationMenuTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <ChevronDown
+    <CaretDown
       aria-hidden="true"
       className="relative top-[1px] transition duration-500 group-data-[state=open]:rotate-180"
     />

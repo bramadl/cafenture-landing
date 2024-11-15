@@ -1,103 +1,127 @@
+import { type Icon } from "@phosphor-icons/react";
+import {
+  BellRinging,
+  BookOpenText,
+  Brain,
+  Compass,
+  DiamondsFour,
+  Gift,
+  Heart,
+  Image,
+  Layout,
+  Lightbulb,
+  MagnifyingGlass,
+  Megaphone,
+  ShieldCheck,
+  Sliders,
+  Stack,
+  Star,
+  Tag,
+  User,
+} from "@phosphor-icons/react/dist/ssr";
+
 export interface Feature {
+  icon: Icon;
   name: string;
   description: string;
 }
 
 export const AccountManagementFeatures: Feature[] = [
   {
+    icon: ShieldCheck,
     name: "Pengaturan Keamanan",
-    description:
-      "Dapatkan informasi terlengkap mengenai promosi kedai kopi  yang terbaru dan terpercaya.",
+    description: "Kontrol penuh terhadap keamanan akun, data, dan akses.",
   },
   {
+    icon: BellRinging,
     name: "Pengaturan Pemberitahuan",
-    description:
-      "Dapatkan beberapa pilihan kedai kopi dihimpun berdasarkan tema tertentu yang menyesuaikan preferensi.",
+    description: "Tentukan jenis dan saluran pemberitahuan yang diinginkan.",
   },
   {
+    icon: User,
     name: "Pengaturan Profil",
-    description:
-      "Dapatkan kemudahan dalam pengalaman pencarian kedai kopi yang divisualisasikan dalam bentuk peta.",
+    description: "Kelola informasi untuk penyesuaian sistem rekomendasi.",
   },
   {
+    icon: Heart,
     name: "Wishlist dan Koleksi",
-    description:
-      "Dapatkan rekomendasi kedai kopi yang disesuaikan secara elegan, berdasarkan preferensi Anda.",
+    description: "Simpan dan kelola koleksi kedai kopi sewaktu-waktu.",
   },
   {
+    icon: Gift,
     name: "Poin dan Hadiah",
-    description:
-      "Dapatkan koleksi kedai kopi yang dibentuk oleh komunitas sebagai referensi tempat terbaik.",
+    description: "Kumpulkan dan tukarkan poin dengan hadiah menarik.",
   },
   {
+    icon: DiamondsFour,
     name: "Pengaturan Preferensi",
-    description:
-      "Dapatkan kemudahan dalam pencarian kedai kopi menggunakan bahasa natural yang didukung AI.",
+    description: "Kalibrasi ulang algoritma rekomendasi kapanpun.",
   },
 ];
 
 export const CoffeeShopDiscoveryFeatures: Feature[] = [
   {
+    icon: Megaphone,
     name: "Informasi Promosi",
-    description:
-      "Dapatkan informasi terlengkap mengenai promosi kedai kopi  yang terbaru dan terpercaya.",
+    description: "Informasi promosi terlengkap, terbaru, dan terpercaya.",
   },
   {
-    name: "Mesin Rekomendasi",
-    description:
-      "Dapatkan rekomendasi kedai kopi yang disesuaikan secara elegan, berdasarkan preferensi Anda.",
+    icon: Lightbulb,
+    name: "Rekomendasi Cerdas",
+    description: "Rekomendasi akurat yang menyesuaikan preferensi.",
   },
   {
+    icon: Stack,
     name: "Kurasi Cerdas",
-    description:
-      "Dapatkan beberapa pilihan kedai kopi dihimpun berdasarkan tema tertentu yang menyesuaikan preferensi.",
+    description: "Kumpulan kedai kopi tematik diperbaharui secara berkala.",
   },
   {
-    name: "Mesin Peta",
-    description:
-      "Dapatkan kemudahan dalam pengalaman pencarian kedai kopi yang divisualisasikan dalam bentuk peta.",
+    icon: Sliders,
+    name: "Filter Pencarian",
+    description: "Kontrol bagaimana hasil pencarian dipersonal.",
   },
   {
+    icon: Compass,
     name: "Jelajahi Koleksi",
-    description:
-      "Dapatkan koleksi kedai kopi yang dibentuk oleh komunitas sebagai referensi tempat terbaik.",
+    description: "Koleksi dari komunitas sebagai referensi tempat terbaik.",
   },
   {
-    name: "Mesin Pencarian",
-    description:
-      "Dapatkan kemudahan dalam pencarian kedai kopi menggunakan bahasa natural yang didukung AI.",
+    icon: MagnifyingGlass,
+    name: "Pencarian Cerdas",
+    description: "Pencarian dengan dukungan bahasa natural AI.",
   },
 ];
 
 export const CoffeeShopInformationFeatures: Feature[] = [
   {
+    icon: Brain,
     name: "Nilai Pencocokan Cerdas",
-    description:
-      "Dapatkan informasi terlengkap mengenai promosi kedai kopi  yang terbaru dan terpercaya.",
+    description: "Penilaian kedai kopi berdasarkan preferensi Anda.",
   },
   {
+    icon: Layout,
     name: "Tema dan Fasilitas",
-    description:
-      "Dapatkan rekomendasi kedai kopi yang disesuaikan secara elegan, berdasarkan preferensi Anda.",
+    description: "Tema dan fasilitas yang disediakan oleh kedai kopi.",
   },
   {
+    icon: BookOpenText,
     name: "Informasi Esensial",
-    description:
-      "Dapatkan beberapa pilihan kedai kopi dihimpun berdasarkan tema tertentu yang menyesuaikan preferensi.",
+    description: "Nama, peta dan alamat, jam buka, saluran komunikasi, dll.",
   },
   {
+    icon: Tag,
     name: "Penawaran dan Promosi",
-    description:
-      "Dapatkan kemudahan dalam pengalaman pencarian kedai kopi yang divisualisasikan dalam bentuk peta.",
+    description: "Daftar promosi terlengkap yang disediakan kedai kopi.",
   },
   {
-    name: "Peta dan Navigasi",
+    icon: Image,
+    name: "Galeri dan 360° Tour",
     description:
-      "Dapatkan koleksi kedai kopi yang dibentuk oleh komunitas sebagai referensi tempat terbaik.",
+      "Jelajahi interior dan eksterior secara interaktif melalu gambar.",
   },
   {
+    icon: Star,
     name: "Ulasan Kedai Kopi",
-    description:
-      "Dapatkan kemudahan dalam pencarian kedai kopi menggunakan bahasa natural yang didukung AI.",
+    description: "Penilaian yang terpercaya dan dimoderasi secara profesional.",
   },
 ];

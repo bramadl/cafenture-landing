@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRight } from "@phosphor-icons/react";
 import { forwardRef, useState } from "react";
 import Link from "next/link";
 
@@ -13,7 +13,7 @@ import { cn } from "@cafenture/lib/utils";
 
 import { Button } from "../ui/button";
 import {
-  NavigationMenu as NavigationMenuUi,
+  NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
@@ -29,10 +29,11 @@ import {
   CafentureSpotlightsUrl,
   CafentureStoryUrl,
   HelpCenterUrl,
+  HomeUrl,
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
-} from "./menus";
+} from "../../content/menus";
 
 const menus = [
   {
@@ -49,19 +50,19 @@ const menus = [
   },
 ];
 
-export const NavigationMenu = () => {
+export const DesktopNavigationMenu = () => {
   const [selectedMenu, setSelectedMenu] = useState<number>(0);
   const showModule = (index: number) => {
     setSelectedMenu(index);
   };
 
   return (
-    <NavigationMenuUi className="hidden lg:flex">
+    <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
+          <Link href={HomeUrl.url} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Beranda
+              {HomeUrl.label}
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -69,7 +70,7 @@ export const NavigationMenu = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Tentang Kami</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="lg:w-[600px] grid lg:grid-cols-[250px_1fr] gap-6 p-6">
+            <ul className="w-[600px] grid grid-cols-[240px_1fr] gap-4 p-6">
               <li className="row-span-3 bg-slate-200 rounded-lg"></li>
               {[
                 CafentureStoryUrl,
@@ -87,7 +88,7 @@ export const NavigationMenu = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Tentang Platform</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="lg:w-[768px] xl:w-[960px] grid lg:grid-cols-[250px_1px_1fr] gap-6 p-6">
+            <ul className="w-[860px] grid grid-cols-[240px_1px_1fr] gap-4 p-6">
               <li className="my-3 flex flex-col">
                 <ul className="w-full flex-1 flex flex-col justify-between gap-6">
                   <li className="flex flex-col gap-6">
@@ -107,7 +108,7 @@ export const NavigationMenu = () => {
                               variant="ghost"
                             >
                               <Link href={menu.url}>
-                                <ArrowRightIcon className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
+                                <ArrowRight className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
                                 {menu.label}
                               </Link>
                             </Button>
@@ -124,7 +125,7 @@ export const NavigationMenu = () => {
                       variant="ghost"
                     >
                       <Link href={CafentureMembershipUrl.url}>
-                        <ArrowRightIcon className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
+                        <ArrowRight className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
                         {CafentureMembershipUrl.label}
                       </Link>
                     </Button>
@@ -135,7 +136,7 @@ export const NavigationMenu = () => {
                 <Separator orientation="vertical" />
               </li>
               <li>
-                <ul className="grid grid-cols-2 gap-6">
+                <ul className="grid grid-cols-2 gap-4">
                   {menus[selectedMenu].features.map((feature, key) => (
                     <li
                       key={key}
@@ -161,7 +162,7 @@ export const NavigationMenu = () => {
           </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
-    </NavigationMenuUi>
+    </NavigationMenu>
   );
 };
 

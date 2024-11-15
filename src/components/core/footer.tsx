@@ -6,22 +6,22 @@ import { Separator } from "../ui/separator";
 
 export const Footer = () => {
   return (
-    <footer className="xl:p-[100px] xl:pb-16 px-0 flex flex-col xl:gap-[100px]">
-      <div className="container mx-auto flex items-start justify-between md:px-16 xl:px-0">
+    <footer className="container mx-auto flex flex-col px-6 sm:px-8 lg:px-16 pb-16">
+      <div className="flex flex-col xl:flex-row items-start xl:justify-between gap-16">
         <div className="flex items-center justify-center gap-4">
           <Link aria-label="Buka Halaman Beranda" href="/">
-            <Logo className="xl:w-16 xl:h-16" />
+            <Logo className="w-12 h-12 lg:w-16 lg:h-16" />
           </Link>
         </div>
         <FooterMenu />
       </div>
-      <div className="container mx-auto flex flex-col xl:gap-9 md:px-16 xl:px-0">
+      <div className="flex flex-col gap-16 lg:gap-10 mt-16 lg:mt-[100px]">
         <Separator />
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6">
           <p className="text-secondary text-sm">
             ©2024 PT ABV Digital. All rights reserved.
           </p>
-          <ul className="flex items-center xl:gap-6">
+          <ul className="flex items-center gap-6">
             <li>
               <Link className="text-secondary text-sm" href="#">
                 Situs Peta
