@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+
 import { CallToActionSection } from "./_/cta-section";
 import { FaqSection } from "./_/faq-section";
 import { FeaturesBento } from "./_/features-bento";

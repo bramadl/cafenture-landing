@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: "Platform Rekomendasi Kedai Kopi",
   },
   description:
-    "Cafenture, platform terdepan untuk pencinta kedai kopi. Temukan rekomendasi personal dan pengalaman menjelajah unik yang melampaui lebih dari secangkir kopi.",
+    "Platform pencarian dan rekomendasi personal kedai kopi dilengkapi dengan pengalaman menjelajah yang unik.",
   alternates: {
     canonical: process.env.__NEXT_PRIVATE_ORIGIN + "/",
   },
