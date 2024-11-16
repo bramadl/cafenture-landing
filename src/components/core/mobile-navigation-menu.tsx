@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, List } from "@phosphor-icons/react";
+import { useState } from "react";
 import Link from "next/link";
 
 import {
@@ -22,11 +23,17 @@ import {
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
 } from "@cafenture/content/menus";
+
 import { Button } from "../ui/button";
 
 export const MobileNavigationMenu = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const closeDrawer = () => {
+    setOpen(false);
+  };
+
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger
         asChild
         className="lg:hidden w-12 h-12 flex items-center justify-center outline-none"
@@ -50,6 +57,7 @@ export const MobileNavigationMenu = () => {
             <Link
               className="inline-flex items-center gap-4 font-semibold text-xl"
               href={HomeUrl.url}
+              onClick={closeDrawer}
             >
               <ArrowRight />
               {HomeUrl.label}
@@ -70,6 +78,7 @@ export const MobileNavigationMenu = () => {
                     <Link
                       className="inline-flex items-center gap-4 text-lg after:absolute after:inset-0"
                       href={link.url}
+                      onClick={closeDrawer}
                     >
                       <ArrowRight />
                       {link.label}
@@ -96,6 +105,7 @@ export const MobileNavigationMenu = () => {
                     <Link
                       className="inline-flex items-center gap-4 text-lg after:absolute after:inset-0"
                       href={link.url}
+                      onClick={closeDrawer}
                     >
                       <ArrowRight />
                       {link.label}
@@ -110,6 +120,7 @@ export const MobileNavigationMenu = () => {
             <Link
               className="inline-flex items-center gap-4 font-semibold text-xl"
               href={HelpCenterUrl.url}
+              onClick={closeDrawer}
             >
               <ArrowRight />
               {HelpCenterUrl.label}

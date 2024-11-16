@@ -6,7 +6,7 @@ import { Separator } from "../ui/separator";
 
 export const Footer = () => {
   return (
-    <footer className="container mx-auto flex flex-col px-6 sm:px-8 lg:px-16 pb-16">
+    <footer className="container mx-auto flex flex-col px-6 sm:px-8 lg:px-16 py-16 sm:pt-[100px]">
       <div className="flex flex-col xl:flex-row items-start xl:justify-between gap-16">
         <div className="flex items-center justify-center gap-4">
           <Link aria-label="Buka Halaman Beranda" href="/">

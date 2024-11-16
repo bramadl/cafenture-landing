@@ -111,7 +111,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
   {
     icon: Tag,
     name: "Penawaran dan Promosi",
-    description: "Daftar promosi terlengkap yang disediakan kedai kopi.",
+    description: "Daftar promosi terlengkap yang ada di kedai kopi.",
   },
   {
     icon: Image,

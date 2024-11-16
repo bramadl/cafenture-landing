@@ -9,8 +9,11 @@ export const TestimonialsSection = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div id="testimonials-section" className="flex flex-col gap-16 sm:gap-[100px] pb-16 sm:pb-[100px]">
-      <Section noPadding>
+    <div
+      id="testimonials-section"
+      className="flex flex-col gap-16 sm:gap-[100px]"
+    >
+      <Section>
         <Section.Header>
           <Tag className="pr-4">
             <Quotes className="text-secondary" weight="fill" size={20} />

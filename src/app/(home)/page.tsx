@@ -1,5 +1,5 @@
+import { Metadata } from "next";
 import { CallToActionSection } from "./_/cta-section";
-import { FaqAccordion } from "./_/faq-accordion";
 import { FaqSection } from "./_/faq-section";
 import { FeaturesBento } from "./_/features-bento";
 import { FeaturesSection } from "./_/features-section";
@@ -11,6 +11,10 @@ import { MerchantsSection } from "./_/merchants-section";
 import { ProductMockups } from "./_/product-mockup";
 import { TestimonialsMarquee } from "./_/testimonials-marquee";
 import { TestimonialsSection } from "./_/testimonials-section";
+
+export const metadata: Metadata = {
+  title: "Platform Rekomendasi Kedai Kopi",
+};
 
 export default function Home() {
   return (
@@ -30,10 +34,8 @@ export default function Home() {
       <TestimonialsSection>
         <TestimonialsMarquee />
       </TestimonialsSection>
+      <FaqSection />
       <CallToActionSection />
-      <FaqSection>
-        <FaqAccordion />
-      </FaqSection>
     </main>
   );
 }

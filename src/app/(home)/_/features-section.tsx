@@ -9,7 +9,7 @@ export const FeaturesSection = ({
   children: React.ReactNode;
 }) => {
   return (
-    <Section id="features-section" noPadding>
+    <Section id="features-section">
       <Section.Header>
         <Tag className="pr-4">
           <Lightning className="text-secondary" weight="fill" size={20} />

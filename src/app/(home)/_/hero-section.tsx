@@ -7,10 +7,9 @@ export const HeroSection = ({ children }: { children: React.ReactNode }) => {
   return (
     <Section
       id="hero-section"
-      className="pt-[100px] min-h-screen justify-between gap-0 overflow-hidden"
-      noPadding
+      className="pt-[100px] h-screen justify-between gap-0 overflow-hidden"
     >
-      <Section.Header className="sm:flex-1 py-24 sm:py-0 xl:pt-24">
+      <Section.Header className="md:flex-1 pt-20 sm:pt-24">
         <Tag className="pr-4">
           <Trophy className="shrink-0 size-6" />
           Platform rekomendasi kedai kopi terlengkap

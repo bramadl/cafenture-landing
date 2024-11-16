@@ -7,6 +7,7 @@ import {
   CoffeeShopInformationFeatures,
 } from "@cafenture/content/features";
 import { cn } from "@cafenture/lib/utils";
+import { Article } from "@cafenture/components/core/article";
 
 interface BentoCardProps extends HTMLAttributes<HTMLDivElement> {
   description: string;
@@ -32,14 +33,14 @@ const BentoCard: FC<BentoCardProps> = ({
         return <div className="w-full h-[100px] rounded-lg bg-slate-200" />;
       case "two-column":
         return (
-          <figure className="grid grid-cols-[120px_1fr] gap-4">
+          <figure className="grid grid-cols-[2fr_1fr] gap-4">
             <div className="w-full h-[100px] rounded-lg bg-slate-200" />
             <div className="w-full h-[100px] rounded-lg bg-slate-200" />
           </figure>
         );
       case "two-column-reversed":
         return (
-          <figure className="grid grid-cols-[1fr_120px] gap-4">
+          <figure className="grid grid-cols-[1fr_2fr] gap-4">
             <div className="w-full h-[100px] rounded-lg bg-slate-200" />
             <div className="w-full h-[100px] rounded-lg bg-slate-200" />
           </figure>
@@ -56,7 +57,7 @@ const BentoCard: FC<BentoCardProps> = ({
   };
 
   return (
-    <article
+    <section
       {...props}
       className={cn(
         "flex flex-col justify-between gap-6 p-6 rounded-2xl bg-slate-50 border border-secondary-200 shadow",
@@ -64,14 +65,10 @@ const BentoCard: FC<BentoCardProps> = ({
       )}
     >
       {Figure()}
-      <section className="flex flex-col gap-2 sm:gap-4">
-        <header className="flex flex-col gap-3">
-          <Icon className="size-5 text-secondary" />
-          <h3 className="text-lg sm:text-xl font-semibold">{title}</h3>
-        </header>
-        <p className="text-secondary">{description}</p>
-      </section>
-    </article>
+      <Article description={description} title={title}>
+        <Icon className="size-5 text-secondary" />
+      </Article>
+    </section>
   );
 };
 
@@ -80,7 +77,7 @@ const BentoGrid: FC<HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
     <div
       {...props}
       className={cn(
-        "grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 lg:auto-rows-[320px] gap-6",
+        "grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-3 xl:auto-rows-[320px] gap-6",
         props.className
       )}
     />
@@ -117,7 +114,7 @@ export const FeaturesBento = () => {
         description={CoffeeShopDiscoveryFeatures[2].description}
       />
       <BentoCard
-        className="md:col-span-2 lg:col-span-1"
+        className="md:col-span-2 xl:col-span-1"
         figures={{ layout: "two-column-reversed" }}
         icon={CoffeeShopDiscoveryFeatures[3].icon}
         title={CoffeeShopDiscoveryFeatures[3].name}

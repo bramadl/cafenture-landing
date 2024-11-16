@@ -2,9 +2,7 @@ import { type FC, type HTMLAttributes } from "react";
 
 import { cn } from "@cafenture/lib/utils";
 
-export const Section: FC<
-  HTMLAttributes<HTMLDivElement> & { noPadding?: boolean }
-> & {
+export const Section: FC<HTMLAttributes<HTMLDivElement>> & {
   Header: FC<HTMLAttributes<HTMLDivElement>>;
   Title: FC<
     HTMLAttributes<HTMLHeadingElement> & {
@@ -12,13 +10,13 @@ export const Section: FC<
     }
   >;
   Caption: FC<HTMLAttributes<HTMLParagraphElement>>;
-} = ({ noPadding = false, ...props }) => {
+} = ({ ...props }) => {
   return (
     <section
       {...props}
       className={cn(
         "container mx-auto px-6 sm:px-8 lg:px-16 flex flex-col gap-16 sm:gap-[100px]",
-        !noPadding && "py-16 sm:py-[100px]",
+        "pt-16 sm:pt-[100px]",
         props.className
       )}
     />

@@ -20,7 +20,7 @@ export const memberships = {
       icon: Star,
       title: "Hadiah Ekslusif",
       description:
-        "Hadiah yang memberikan nilai lebih. Dirancang untuk mereka yang menghargai kemewahan.",
+        "Hadiah yang memberikan nilai lebih untuk mereka yang menghargai kemewahan.",
     },
   ],
 };

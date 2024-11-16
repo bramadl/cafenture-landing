@@ -3,11 +3,9 @@ import { Question } from "@phosphor-icons/react/dist/ssr";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
-export const FaqSection = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+import { FaqAccordion } from "./faq-accordion";
+
+export const FaqSection = () => {
   return (
     <Section id="faq-section">
       <Section.Header>
@@ -26,7 +24,7 @@ export const FaqSection = ({
           terbaik.
         </Section.Caption>
       </Section.Header>
-      {children}
+      <FaqAccordion />
     </Section>
   );
 };

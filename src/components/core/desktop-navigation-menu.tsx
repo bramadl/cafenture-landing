@@ -34,6 +34,8 @@ import {
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
 } from "../../content/menus";
+import { WavyLines } from "../svg/wavy-lines";
+import { Logo } from "../ui/logo";
 
 const menus = [
   {
@@ -71,7 +73,21 @@ export const DesktopNavigationMenu = () => {
           <NavigationMenuTrigger>Tentang Kami</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-[600px] grid grid-cols-[240px_1fr] gap-4 p-6">
-              <li className="row-span-3 bg-slate-200 rounded-lg"></li>
+              <li className="relative row-span-3 flex flex-col justify-between p-6 bg-gradient-to-br from-slate-800 to-slate-950 rounded-lg">
+                <Logo className="size-16" type="light" />
+                <article>
+                  <p className="font-semibold text-lg text-white">
+                    Cafenture Indonesia
+                  </p>
+                  <p className="text-sm text-white/75">
+                    Platform Rekomendasi Kedai Kopi Pertama di Indonesia
+                  </p>
+                  <small className="inline-block mt-8 text-white text-xs">
+                    Produk PT ABV Digital Indonesia
+                  </small>
+                </article>
+                <WavyLines className="absolute inset-0 pointer-events-none rotate-90 scale-[2]" />
+              </li>
               {[
                 CafentureStoryUrl,
                 CafentureMerchantUrl,

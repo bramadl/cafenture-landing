@@ -4,7 +4,7 @@ import { Button } from "@cafenture/components/ui/button";
 
 export const CallToActionSection = () => {
   return (
-    <article className="bg-slate-50">
+    <article className="bg-slate-50 mt-16 sm:mt-[100px]">
       <Section
         id="cta-section"
         className="flex-col-reverse lg:flex-row lg:justify-between overflow-hidden !py-0 gap-0 md:gap-0 lg:gap-[100px]"
