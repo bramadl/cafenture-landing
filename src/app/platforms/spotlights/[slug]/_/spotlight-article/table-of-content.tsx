@@ -21,7 +21,7 @@ export const TableOfContent: FC<
   const ref = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      if (width < 1280) return;
+      if (width < 1208) return;
       if (!ref.current) return;
       const headings = [
         ...document.querySelectorAll<HTMLHeadingElement>("#article h2"),
@@ -47,7 +47,7 @@ export const TableOfContent: FC<
         });
       });
     },
-    { dependencies: [] }
+    { dependencies: [width], revertOnUpdate: true }
   );
 
   return (
