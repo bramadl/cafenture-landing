@@ -11,7 +11,10 @@ export const Article: FC<
   }
 > = ({ description, details, title, ...props }) => {
   return (
-    <article {...props} className={cn("flex flex-col gap-1 sm:gap-2", props.className)}>
+    <article
+      {...props}
+      className={cn("flex flex-col gap-1 sm:gap-2", props.className)}
+    >
       <header className="flex flex-col gap-3">
         {props.children}
         <Title>{title}</Title>
@@ -37,7 +40,7 @@ const Title: FC<HTMLAttributes<HTMLHeadingElement>> = ({ ...props }) => {
   return (
     <h3
       {...props}
-      className="text-lg sm:text-xl font-semibold max-w-[80%] md:max-w-[90%] lg:max-w-[75%] xl:max-w-none"
+      className="group-hover:text-primary transition-colors text-lg sm:text-xl font-semibold max-w-[80%] md:max-w-[90%] lg:max-w-[75%] xl:max-w-none"
     />
   );
 };

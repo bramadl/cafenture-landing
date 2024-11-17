@@ -1,3 +1,4 @@
+// import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 import { FooterMenu } from "./footer-menu";
@@ -18,26 +19,21 @@ export const Footer = () => {
       <div className="flex flex-col gap-16 lg:gap-10 mt-16 lg:mt-[100px]">
         <Separator />
         <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-6">
+          <div />
           <p className="text-secondary text-sm">
-            ©2024 PT ABV Digital. All rights reserved.
+            ©2024 - Hak Cipta Dilindungi.
           </p>
-          <ul className="flex items-center gap-6">
+          {/* <ul className="flex items-center gap-6">
             <li>
-              <Link className="text-secondary text-sm" href="#">
-                Situs Peta
+              <Link
+                className="inline-flex items-center gap-2 text-secondary text-sm"
+                href="https://fluxt.agency"
+              >
+                Fluxt Agency
+                <ArrowUpRight className="size-4" />
               </Link>
             </li>
-            <li>
-              <Link className="text-secondary text-sm" href="#">
-                Kebijakan Privasi
-              </Link>
-            </li>
-            <li>
-              <Link className="text-secondary text-sm" href="#">
-                Syarat Ketentuan
-              </Link>
-            </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </footer>

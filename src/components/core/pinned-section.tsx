@@ -11,7 +11,7 @@ import { cn } from "@cafenture/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export const StickyArticle: FC<HTMLAttributes<HTMLDivElement>> = ({
+export const PinnedSection: FC<HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => {
   const { width = 0 } = useWindowSize();

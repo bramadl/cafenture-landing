@@ -1,6 +1,15 @@
+import { Icon } from "@phosphor-icons/react";
+import {
+  FileText,
+  Lifebuoy,
+  Question,
+  ShieldCheck,
+} from "@phosphor-icons/react/dist/ssr";
+
 export interface MenuUrl {
   external?: boolean;
   description: string;
+  icon?: Icon;
   label: string;
   url: string;
 }
@@ -30,6 +39,14 @@ export const CafentureSpotlightsUrl: MenuUrl = {
   label: "Cafenture Spotlights",
   description:
     "Baca tulisan tim kami yang menawarkan cerita, pengalaman, dan pembelajaran.",
+};
+
+export const CafenturePlatformUrl: MenuUrl = {
+  url: "#",
+  label: "Cafenture Platform",
+  description:
+    "Baca tulisan tim kami yang menawarkan cerita, pengalaman, dan pembelajaran.",
+  external: true,
 };
 
 export const CafentureMembershipUrl: MenuUrl = {
@@ -64,25 +81,33 @@ export const HelpCenterUrl: MenuUrl = {
   description: "",
 };
 
-export const UserPrivacyUrl: MenuUrl = {
-  url: "/help-center/user-privacies",
-  label: "Kebijakan Pengguna",
-  description: "",
-  external: true,
+export const UserManualsAndSupportsUrl: MenuUrl = {
+  icon: Lifebuoy,
+  url: "/help-center",
+  label: "Dukungan dan Panduan",
+  description: "Temukan solusi dan panduan lengkap untuk membantu Anda.",
 };
 
-export const UserFaqUrl: MenuUrl = {
-  url: "/help-center/user-faqs",
+export const UserPrivacyAndPoliciesUrl: MenuUrl = {
+  icon: FileText,
+  url: "/help-center/privacy-and-policies",
+  label: "Syarat dan Kebijakan",
+  description:
+    "Ketentuan dan peraturan yang berlaku untuk penggunaan layanan.",
+};
+
+export const UserQuestionsUrl: MenuUrl = {
+  icon: Question,
+  url: "/help-center/frequently-asked-questions",
   label: "Pertanyaan Pengguna",
-  description: "",
-  external: true,
+  description: "Jawaban atas pertanyaan umum yang sering diajukan.",
 };
 
-export const UserSupportUrl: MenuUrl = {
-  url: "/help-center/user-supports",
-  label: "Dukungan Pengguna",
-  description: "",
-  external: true,
+export const UserTermsAndConditionsUrl: MenuUrl = {
+  icon: ShieldCheck,
+  url: "/help-center/terms-and-conditions",
+  label: "Kebijakan dan Privasi",
+  description: "Komitmen kami terhadap privasi dan perlindungan data Anda.",
 };
 
 export const EmailContactUrl: MenuUrl = {

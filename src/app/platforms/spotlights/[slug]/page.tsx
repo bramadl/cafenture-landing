@@ -1,14 +1,15 @@
 import { type Metadata } from "next";
 
+import { Blog } from "@cafenture/components/core/blog";
+import { PinnedSection } from "@cafenture/components/core/pinned-section";
+import { Separator } from "@cafenture/components/ui/separator";
+import { spotlight } from "@cafenture/content/spotlights";
+
 import { ArticleSection } from "./_/article-section";
 import { HeroSection } from "./_/hero-section";
 import { MoreSpotlightsSection } from "./_/more-spotlights-section";
 import { SocialSharing } from "./_/spotlight-article/social-sharing";
-import { SpotlightArticle } from "./_/spotlight-article/spotlight-article";
-import { StickyArticle } from "./_/spotlight-article/sticky-article";
 import { TableOfContent } from "./_/spotlight-article/table-of-content";
-import { spotlight } from "@cafenture/content/spotlights";
-import { Separator } from "@cafenture/components/ui/separator";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -27,11 +28,11 @@ export default function Page() {
     <main>
       <HeroSection caption={spotlight.caption} title={spotlight.title} />
       <ArticleSection>
-        <StickyArticle>
+        <PinnedSection>
           <TableOfContent contents={spotlight.contents} />
           <SocialSharing className="hidden xl:flex" />
-        </StickyArticle>
-        <SpotlightArticle>{spotlight.content}</SpotlightArticle>
+        </PinnedSection>
+        <Blog>{spotlight.content}</Blog>
         <Separator className="xl:hidden" />
         <SocialSharing className="xl:hidden" />
       </ArticleSection>

@@ -1,4 +1,5 @@
 import {
+  ArrowUpRight,
   EnvelopeSimple,
   InstagramLogo,
   WhatsappLogo,
@@ -8,6 +9,7 @@ import Link from "next/link";
 import {
   CafentureMembershipUrl,
   CafentureMerchantUrl,
+  CafenturePlatformUrl,
   CafentureSpotlightsUrl,
   CafentureStoryUrl,
   EmailContactUrl,
@@ -15,16 +17,22 @@ import {
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
-  UserFaqUrl,
-  UserPrivacyUrl,
-  UserSupportUrl,
+  UserManualsAndSupportsUrl,
+  UserPrivacyAndPoliciesUrl,
+  UserQuestionsUrl,
+  UserTermsAndConditionsUrl,
   WhatsAppContactUrl,
 } from "../../content/menus";
 
 const menus = [
   {
     label: "Tentang Kami",
-    items: [CafentureStoryUrl, CafentureMerchantUrl, CafentureSpotlightsUrl],
+    items: [
+      CafentureStoryUrl,
+      CafentureMerchantUrl,
+      CafentureSpotlightsUrl,
+      CafenturePlatformUrl,
+    ],
   },
   {
     label: "Tentang Platform",
@@ -37,7 +45,12 @@ const menus = [
   },
   {
     label: "Pusat Dukungan",
-    items: [UserPrivacyUrl, UserFaqUrl, UserSupportUrl],
+    items: [
+      UserQuestionsUrl,
+      UserTermsAndConditionsUrl,
+      UserPrivacyAndPoliciesUrl,
+      UserManualsAndSupportsUrl,
+    ],
   },
 ];
 
@@ -52,10 +65,11 @@ export const FooterMenu = () => {
               {menu.items.map((item) => (
                 <li key={item.label}>
                   <Link
-                    className="text-secondary hover:text-black transition"
+                    className="inline-flex items-center gap-2 text-secondary hover:text-black transition"
                     href={item.url}
                     target={item.external ? "_blank" : undefined}
                   >
+                    {item.external && <ArrowUpRight className="size-4" />}
                     {item.label}
                   </Link>
                 </li>
