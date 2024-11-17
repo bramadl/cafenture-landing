@@ -1,7 +1,6 @@
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
 import { BackgroundStories } from "./_/background-stories";
-import { CallToActionSection } from "../(home)/_/cta-section";
 import { BackgroundSection } from "./_/background-section";
 import { HeroSection } from "./_/hero-section";
 import { MarketBeams } from "./_/market-beams";
@@ -31,7 +30,6 @@ export default function Page() {
         <SolutionsList />
       </SolutionsSection>
       <ReachabilitySection />
-      <CallToActionSection />
     </main>
   );
 }

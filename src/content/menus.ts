@@ -53,7 +53,7 @@ export const ModuleCoffeeShopDiscoveryUrl: MenuUrl = {
 
 export const ModuleCoffeeShopInformationUrl: MenuUrl = {
   url: "/modules/coffee-shop-information",
-  label: "Coffee Shop Profile",
+  label: "Coffee Shop Information",
   description:
     "Modul informasi kedai kopi yang memiliki data dan informasi terlengkap.",
 };

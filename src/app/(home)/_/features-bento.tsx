@@ -109,9 +109,9 @@ export const FeaturesBento = () => {
       <BentoCard
         className="sm:row-span-2"
         figures={{ layout: "three-rows" }}
-        icon={CoffeeShopDiscoveryFeatures[2].icon}
-        title={CoffeeShopDiscoveryFeatures[2].name}
-        description={CoffeeShopDiscoveryFeatures[2].description}
+        icon={CoffeeShopDiscoveryFeatures[5].icon}
+        title={CoffeeShopDiscoveryFeatures[5].name}
+        description={CoffeeShopDiscoveryFeatures[5].description}
       />
       <BentoCard
         className="md:col-span-2 xl:col-span-1"

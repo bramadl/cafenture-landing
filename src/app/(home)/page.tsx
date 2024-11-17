@@ -1,6 +1,5 @@
-import { Metadata } from "next";
+import { type Metadata } from "next";
 
-import { CallToActionSection } from "./_/cta-section";
 import { FaqSection } from "./_/faq-section";
 import { FeaturesBento } from "./_/features-bento";
 import { FeaturesSection } from "./_/features-section";
@@ -36,7 +35,6 @@ export default function Home() {
         <TestimonialsMarquee />
       </TestimonialsSection>
       <FaqSection />
-      <CallToActionSection />
     </main>
   );
 }

@@ -11,7 +11,7 @@ import {
 } from "@cafenture/content/features";
 import { cn } from "@cafenture/lib/utils";
 
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -113,38 +113,46 @@ export const DesktopNavigationMenu = () => {
                       <ul className="flex flex-col gap-2">
                         {menus.map((menu, key) => (
                           <li key={key}>
-                            <Button
-                              asChild
-                              className={cn(
-                                "group w-full justify-start hover:bg-slate-100 text-slate-500 hover:text-slate-500",
-                                selectedMenu === key && "bg-slate-50"
-                              )}
-                              onMouseEnter={() => showModule(key)}
-                              size="sm"
-                              variant="ghost"
-                            >
-                              <Link href={menu.url}>
+                            <Link href={menu.url} legacyBehavior passHref>
+                              <NavigationMenuLink
+                                className={cn(
+                                  buttonVariants({
+                                    size: "sm",
+                                    variant: "ghost",
+                                  }),
+                                  "group w-full justify-start hover:bg-slate-100 text-slate-500 hover:text-slate-500",
+                                  selectedMenu === key && "bg-slate-50"
+                                )}
+                                onMouseEnter={() => showModule(key)}
+                              >
                                 <ArrowRight className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
                                 {menu.label}
-                              </Link>
-                            </Button>
+                              </NavigationMenuLink>
+                            </Link>
                           </li>
                         ))}
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <Button
-                      asChild
-                      className="group w-full justify-start text-primary"
-                      size="sm"
-                      variant="ghost"
+                    <Link
+                      href={CafentureMembershipUrl.url}
+                      legacyBehavior
+                      passHref
                     >
-                      <Link href={CafentureMembershipUrl.url}>
+                      <NavigationMenuLink
+                        className={cn(
+                          buttonVariants({
+                            size: "sm",
+                            variant: "ghost",
+                          }),
+                          "group w-full justify-start text-primary"
+                        )}
+                      >
                         <ArrowRight className="mr-1 group-hover:mr-2 transition-[margin] size-4" />
                         {CafentureMembershipUrl.label}
-                      </Link>
-                    </Button>
+                      </NavigationMenuLink>
+                    </Link>
                   </li>
                 </ul>
               </li>
