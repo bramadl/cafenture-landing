@@ -25,7 +25,7 @@ export const Spotlight: FC<HTMLAttributes<HTMLDivElement>> &
   return (
     <article
       {...props}
-      className={cn("flex flex-col gap-2 sm:gap-4", props.className)}
+      className={cn("flex flex-col gap-4", props.className)}
     />
   );
 };
@@ -45,7 +45,7 @@ Spotlight.Title = function Title({ url, ...props }) {
     <h2
       {...props}
       className={cn(
-        "text-xl sm:text-2xl font-semibold group-hover:text-primary transition-colors",
+        "text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors",
         props.className
       )}
     >

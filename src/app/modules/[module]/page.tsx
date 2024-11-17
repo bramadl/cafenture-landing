@@ -59,7 +59,10 @@ export default async function Page({
         <ul className="flex flex-col gap-[100px]">
           {features.map(
             ({ description, details, icon: Icon, keyPoints, name }, key) => (
-              <li key={key} className="flex flex-col xl:flex-row items-center gap-12 xl:gap-[100px]">
+              <li
+                key={key}
+                className="flex flex-col xl:flex-row items-center gap-12 xl:gap-[100px]"
+              >
                 <Article
                   className={cn(
                     "flex-1",

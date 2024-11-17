@@ -1,8 +1,22 @@
 import { type FC, type SVGAttributes } from "react";
+import Image from "next/image";
 
-export const TwoDevicesMockup: FC<SVGAttributes<HTMLOrSVGElement>> = ({
-  ...props
-}) => {
+import TwoDevicesMockupPNG from "./assets/two-devices-mockup.png";
+import ThreeDevicesMockupPNG from "./assets/three-devices-mockup.png";
+
+export const TwoDevicesMockup: FC<
+  SVGAttributes<HTMLOrSVGElement> & { usePNG?: boolean }
+> = ({ usePNG = false, ...props }) => {
+  if (usePNG) {
+    return (
+      <Image
+        alt="Two Devices Mockup"
+        className={props.className}
+        src={TwoDevicesMockupPNG}
+      />
+    );
+  }
+
   return (
     <svg
       {...props}
@@ -59,9 +73,19 @@ export const TwoDevicesMockup: FC<SVGAttributes<HTMLOrSVGElement>> = ({
   );
 };
 
-export const ThreeDevicesMockup: FC<SVGAttributes<HTMLOrSVGElement>> = ({
-  ...props
-}) => {
+export const ThreeDevicesMockup: FC<
+  SVGAttributes<HTMLOrSVGElement> & { usePNG?: boolean }
+> = ({ usePNG, ...props }) => {
+  if (usePNG) {
+    return (
+      <Image
+        alt="Two Devices Mockup"
+        className={props.className}
+        src={ThreeDevicesMockupPNG}
+      />
+    );
+  }
+
   return (
     <svg
       {...props}

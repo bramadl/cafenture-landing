@@ -11,14 +11,14 @@ export const Article: FC<
   }
 > = ({ description, details, title, ...props }) => {
   return (
-    <article {...props} className={cn("flex flex-col gap-2 sm:gap-4", props.className)}>
+    <article {...props} className={cn("flex flex-col gap-1 sm:gap-2", props.className)}>
       <header className="flex flex-col gap-3">
         {props.children}
         <Title>{title}</Title>
       </header>
       <Description>{description}</Description>
       {details && (
-        <ul className="flex flex-col gap-4 mt-1">
+        <ul className="flex flex-col gap-4 mt-3">
           {details.map((detail, key) => (
             <li key={key} className="flex items-start gap-4">
               <div className="p-2 rounded bg-secondary-50 text-secondary -translate-y-1">

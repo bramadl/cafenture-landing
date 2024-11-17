@@ -55,7 +55,7 @@ export const MobileNavigationMenu = () => {
         >
           <li className="flex flex-col gap-4">
             <Link
-              className="inline-flex items-center gap-4 font-semibold text-xl"
+              className="inline-flex items-center gap-4 font-semibold text-lg"
               href={HomeUrl.url}
               onClick={closeDrawer}
             >
@@ -64,7 +64,7 @@ export const MobileNavigationMenu = () => {
             </Link>
           </li>
           <li className="flex flex-col gap-4">
-            <p className="inline-flex items-center gap-4 font-semibold text-xl">
+            <p className="inline-flex items-center gap-4 font-semibold text-lg">
               Tentang Kami
             </p>
             <ul className="flex flex-col gap-6">
@@ -76,21 +76,21 @@ export const MobileNavigationMenu = () => {
                 <li key={key}>
                   <div className="relative flex flex-col gap-2">
                     <Link
-                      className="inline-flex items-center gap-4 text-lg after:absolute after:inset-0"
+                      className="inline-flex items-center gap-4 text-base after:absolute after:inset-0"
                       href={link.url}
                       onClick={closeDrawer}
                     >
                       <ArrowRight />
                       {link.label}
                     </Link>
-                    <p className="text-secondary">{link.description}</p>
+                    <p className="text-secondary text-sm">{link.description}</p>
                   </div>
                 </li>
               ))}
             </ul>
           </li>
           <li className="flex flex-col gap-4">
-            <p className="inline-flex items-center gap-4 font-semibold text-xl">
+            <p className="inline-flex items-center gap-4 font-semibold text-lg">
               Tentang Platform
             </p>
             <ul className="flex flex-col gap-6">
@@ -103,14 +103,14 @@ export const MobileNavigationMenu = () => {
                 <li key={key}>
                   <div className="relative flex flex-col gap-2">
                     <Link
-                      className="inline-flex items-center gap-4 text-lg after:absolute after:inset-0"
+                      className="inline-flex items-center gap-4 text-base after:absolute after:inset-0"
                       href={link.url}
                       onClick={closeDrawer}
                     >
                       <ArrowRight />
                       {link.label}
                     </Link>
-                    <p className="text-secondary">{link.description}</p>
+                    <p className="text-secondary text-sm">{link.description}</p>
                   </div>
                 </li>
               ))}
@@ -118,7 +118,7 @@ export const MobileNavigationMenu = () => {
           </li>
           <li className="flex flex-col gap-4">
             <Link
-              className="inline-flex items-center gap-4 font-semibold text-xl"
+              className="inline-flex items-center gap-4 font-semibold text-lg"
               href={HelpCenterUrl.url}
               onClick={closeDrawer}
             >

@@ -58,7 +58,7 @@ Section.Title = function Title({ as = "h2", ...props }) {
     <Component
       {...props}
       className={cn(
-        "max-w-[768px] lg:text-center text-2xl sm:text-4xl font-bold sm:leading-normal",
+        "max-w-[768px] lg:text-center text-2xl sm:text-4xl font-bold leading-normal sm:leading-normal",
         props.className
       )}
     />

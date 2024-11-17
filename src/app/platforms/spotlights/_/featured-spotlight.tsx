@@ -3,15 +3,17 @@ import { Spotlight } from "./spotlight";
 
 export const FeaturedSpotlight = () => {
   return (
-    <section className="group relative w-full grid xl:grid-cols-[1.25fr_2fr] xl:gap-16 rounded-xl bg-slate-50">
-      <Spotlight className="flex-1 justify-center p-6 pt-0 xl:p-16 pr-0">
-        <p className="text-secondary font-semibold text-sm">
-          Spotlight Unggulan
-        </p>
-        <Spotlight.Title url="/platforms/spotlights/slug">
-          Mengenal Pentingnya Platform Rekomendasi
-        </Spotlight.Title>
-        <Spotlight.Description>
+    <section className="group relative w-full grid xl:grid-cols-[1.25fr_2fr] grid-rows-1 gap-0 xl:gap-16 rounded-xl bg-slate-50">
+      <Spotlight className="justify-center p-6 pt-0 xl:pr-0 xl:p-16">
+        <header className="flex flex-col gap-2">
+          <p className="text-secondary font-semibold text-sm">
+            Spotlight Unggulan
+          </p>
+          <Spotlight.Title url="/platforms/spotlights/slug">
+            Mengenal Pentingnya Platform Rekomendasi
+          </Spotlight.Title>
+        </header>
+        <Spotlight.Description className="line-clamp-3">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi corrupti
           vero incidunt repellendus, rerum ea quisquam repudiandae, hic et eius
           debitis omnis optio. Nam quae tenetur quam atque amet. Neque obcaecati
@@ -22,7 +24,7 @@ export const FeaturedSpotlight = () => {
         </Spotlight.Description>
         <Spotlight.Author />
       </Spotlight>
-      <figure className="flex-1 row-start-1 xl:col-start-2 aspect-video p-6">
+      <figure className="row-start-1 xl:col-start-2 aspect-video p-6">
         <Image
           alt="Mengapa Platform Rekomendasi Itu Penting: Temukan Kedai Kopi yang Sempurna untuk Anda"
           className="w-full h-full object-cover rounded-lg pointer-events-none select-none"
