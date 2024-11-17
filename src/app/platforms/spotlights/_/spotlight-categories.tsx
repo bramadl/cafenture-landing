@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@cafenture/components/ui/dropdown-menu";
-import { spotlightCategories } from "@cafenture/content/spotlights";
+import { categories } from "@cafenture/content/spotlights";
 
 export const SpotlightCategories = () => {
   return (
@@ -28,7 +28,7 @@ export const SpotlightCategories = () => {
           <DropdownMenuGroup>
             <DropdownMenuLabel>Pilih Kategori</DropdownMenuLabel>
             <DropdownMenuItem>Semua Kategori</DropdownMenuItem>
-            {spotlightCategories.map((category, key) => (
+            {categories.map((category, key) => (
               <DropdownMenuItem key={key}>{category.name}</DropdownMenuItem>
             ))}
           </DropdownMenuGroup>
@@ -43,7 +43,7 @@ export const SpotlightCategories = () => {
             Semua Kategori
           </Button>
         </li>
-        {spotlightCategories.map((category, key) => (
+        {categories.map((category, key) => (
           <li key={key}>
             <Button
               className="hover:bg-slate-100 text-slate-600 hover:text-slate-800"

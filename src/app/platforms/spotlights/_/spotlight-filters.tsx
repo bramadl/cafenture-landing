@@ -21,11 +21,11 @@ import {
   SelectLabel,
   SelectTrigger,
 } from "@cafenture/components/ui/select";
-import { spotlightFilters } from "@cafenture/content/spotlights";
+import { filters } from "@cafenture/content/spotlights";
 
 export const SpotlightFilters = () => {
   const [defaultValue, setDefaultValue] = useState(
-    spotlightFilters[0].items[0].value
+    filters[0].items[0].value
   );
 
   return (
@@ -41,7 +41,7 @@ export const SpotlightFilters = () => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {spotlightFilters.map((filter, key) => (
+          {filters.map((filter, key) => (
             <Fragment key={filter.group}>
               {key !== 0 && <DropdownMenuSeparator />}
               <DropdownMenuGroup>
@@ -58,14 +58,14 @@ export const SpotlightFilters = () => {
         <SelectTrigger className="hidden md:flex w-[320px]">
           <span>
             {
-              spotlightFilters
+              filters
                 .flatMap((filter) => filter.items)
                 .find((filter) => filter.value === defaultValue)?.text
             }
           </span>
         </SelectTrigger>
         <SelectContent>
-          {spotlightFilters.map((filter) => (
+          {filters.map((filter) => (
             <SelectGroup key={filter.group}>
               <SelectLabel>{filter.group}</SelectLabel>
               {filter.items.map((item, key) => (
