@@ -28,7 +28,6 @@ export const SpotlightsSection = async () => {
           <SpotlightCategories />
           <SpotlightFilters />
         </header>
-        {/* <pre>{JSON.stringify(spotlights, null, 2)}</pre> */}
         <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
           {spotlights.map((spotlight, key) => (
             <li key={key}>

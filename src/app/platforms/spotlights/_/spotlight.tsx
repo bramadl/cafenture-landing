@@ -109,7 +109,7 @@ Spotlight.Thumbnail = function Thumbnail({
     >
       <Image
         alt={fileName}
-        className="w-full h-full object-cover object-bottom select-none pointer-events-none"
+        className="w-full h-full object-cover object-center select-none pointer-events-none"
         height={height}
         src={url}
         width={width}

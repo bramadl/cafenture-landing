@@ -14,11 +14,11 @@ export const SpotlightCard: FC<ISpotlight> = ({
   slug,
 }) => {
   return (
-    <article className="group relative flex flex-col rounded-lg overflow-hidden bg-slate-50 border border-slate-200 shadow">
+    <article className="w-full h-full group relative flex flex-col rounded-lg overflow-hidden bg-slate-50 border border-slate-200 shadow">
       <Spotlight.Thumbnail {...thumbnail} />
-      <Spotlight className="p-4 xl:p-6">
+      <Spotlight className="flex-1 p-4 xl:p-6">
         <Spotlight.Tags tags={tags} />
-        <header className="flex flex-col gap-2">
+        <header className="flex-1 flex flex-col gap-2">
           <Spotlight.Title url={`/platforms/spotlights/${slug}`}>
             {title}
           </Spotlight.Title>
