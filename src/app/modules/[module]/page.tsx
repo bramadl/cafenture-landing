@@ -11,15 +11,15 @@ export const generateMetadata = async ({
   params,
 }: PageProps<Promise<{ module: string }>>): Promise<Metadata> => {
   const moduleFromParams = (await params).module;
-  const module = modules.find(
-    (module) => module.base.slug === `/modules/${moduleFromParams}`
+  const appModule = modules.find(
+    (m) => m.base.slug === `/modules/${moduleFromParams}`
   );
 
-  if (!module) throw new Error("No module can be found!");
+  if (!appModule) throw new Error("No module can be found!");
   const {
     base: { slug },
     seo: { description, title },
-  } = module;
+  } = appModule;
 
   return {
     title,
@@ -34,15 +34,15 @@ export default async function Page({
   params,
 }: PageProps<Promise<{ module: string }>>) {
   const moduleFromParams = (await params).module;
-  const module = modules.find(
+  const appModule = modules.find(
     (module) => module.base.slug === `/modules/${moduleFromParams}`
   );
 
-  if (!module) return notFound();
+  if (!appModule) return notFound();
   const {
     base: { description, label, title },
     features,
-  } = module;
+  } = appModule;
 
   return (
     <main>
@@ -59,11 +59,11 @@ export default async function Page({
         <ul className="flex flex-col gap-[100px]">
           {features.map(
             ({ description, details, icon: Icon, keyPoints, name }, key) => (
-              <li key={key} className="flex items-center gap-[100px]">
+              <li key={key} className="flex flex-col xl:flex-row items-center gap-12 xl:gap-[100px]">
                 <Article
                   className={cn(
                     "flex-1",
-                    key % 2 === 0 ? "order-1" : "order-2"
+                    key % 2 === 0 ? "order-2 xl:order-1" : "order-2"
                   )}
                   description={details || description}
                   details={keyPoints}
@@ -73,8 +73,8 @@ export default async function Page({
                 </Article>
                 <figure
                   className={cn(
-                    "flex-1",
-                    key % 2 === 0 ? "order-2" : "order-1"
+                    "w-full xl:w-auto xl:flex-1",
+                    key % 2 === 0 ? "order-1 xl:order-2" : "order-1"
                   )}
                 >
                   <div className="w-full aspect-[12/8] rounded-lg bg-slate-200" />

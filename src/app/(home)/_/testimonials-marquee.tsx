@@ -1,6 +1,7 @@
+import Image from "next/image";
+
 import { Marquee } from "@cafenture/components/ui/marquee";
 import { testimonials } from "@cafenture/content/testimonials";
-import Image from "next/image";
 
 const firstRow = testimonials.slice(0, testimonials.length / 2);
 const secondRow = testimonials.slice(testimonials.length / 2);

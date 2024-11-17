@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 
 import { Footer } from "@cafenture/components/core/footer";
 import { Navigation } from "@cafenture/components/core/navigation";
-import { ReactLenis } from "@cafenture/lib/react-lenis";
+import { SmoothScroller } from "@cafenture/components/core/smooth-scroller";
 
-import { CallToActionSection } from "./(home)/_/cta-section";
+import { CallToActionSection } from "../components/core/cta-section";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,12 +34,12 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${inter.variable} antialiased`}>
       <body>
-        <ReactLenis root>
+        <SmoothScroller>
           <Navigation />
           {children}
           <CallToActionSection />
           <Footer />
-        </ReactLenis>
+        </SmoothScroller>
       </body>
     </html>
   );

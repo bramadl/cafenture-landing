@@ -1,8 +1,16 @@
-import { type FC, type HTMLAttributes } from "react";
+import {
+  forwardRef,
+  ForwardRefExoticComponent,
+  RefAttributes,
+  type FC,
+  type HTMLAttributes,
+} from "react";
 
 import { cn } from "@cafenture/lib/utils";
 
-export const Section: FC<HTMLAttributes<HTMLDivElement>> & {
+type SectionProps = ForwardRefExoticComponent<
+  HTMLAttributes<HTMLDivElement> & RefAttributes<HTMLDivElement>
+> & {
   Header: FC<HTMLAttributes<HTMLDivElement>>;
   Title: FC<
     HTMLAttributes<HTMLHeadingElement> & {
@@ -10,10 +18,16 @@ export const Section: FC<HTMLAttributes<HTMLDivElement>> & {
     }
   >;
   Caption: FC<HTMLAttributes<HTMLParagraphElement>>;
-} = ({ ...props }) => {
+};
+
+export const Section: SectionProps = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
+>(({ ...props }, ref) => {
   return (
     <section
       {...props}
+      ref={ref}
       className={cn(
         "container mx-auto px-6 sm:px-8 lg:px-16 flex flex-col gap-16 sm:gap-[100px]",
         "pt-16 sm:pt-[100px]",
@@ -21,7 +35,8 @@ export const Section: FC<HTMLAttributes<HTMLDivElement>> & {
       )}
     />
   );
-};
+}) as SectionProps;
+Section.displayName = "Section";
 
 Section.Header = function Header({ ...props }) {
   return (

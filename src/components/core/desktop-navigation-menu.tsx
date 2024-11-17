@@ -11,7 +11,7 @@ import {
 } from "@cafenture/content/features";
 import { cn } from "@cafenture/lib/utils";
 
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,

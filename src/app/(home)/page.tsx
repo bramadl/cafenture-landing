@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Platform Rekomendasi Kedai Kopi",
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <main>
       <HeroSection>

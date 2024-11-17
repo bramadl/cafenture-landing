@@ -17,7 +17,6 @@ import {
   ShieldCheck,
   Stack,
   Star,
-  Tag,
   User,
 } from "@phosphor-icons/react/dist/ssr";
 
