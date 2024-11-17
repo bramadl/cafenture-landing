@@ -53,7 +53,7 @@ export const HelpCenterSubMenu = () => {
 
   return (
     <div ref={ref} className="flex flex-col gap-4">
-      <h3 className="text-lg sm:text-xl font-semibold">Dalam Halaman Ini</h3>
+      <p className="text-lg sm:text-xl font-semibold">Dalam Halaman Ini</p>
       <ul className="flex flex-col gap-1 border-l border-slate-300">
         {contents.contents.map((link, key) => (
           <li key={key}>

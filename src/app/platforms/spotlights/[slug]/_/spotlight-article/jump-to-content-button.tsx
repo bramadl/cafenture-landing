@@ -1,5 +1,6 @@
 "use client";
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import { useCallback } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
@@ -27,11 +28,24 @@ export const JumpToContentButton = ({
     (id: string) => {
       if (!lenis) return;
       if (onJumped) {
+        const tocScrollTriggers = ScrollTrigger.getAll().filter(
+          (st) => st.vars.id === "toc"
+        );
+
+        tocScrollTriggers.forEach((st) => {
+          st.disable();
+        });
+
         onJumped(id);
         lenis.scrollTo(`#${id}`, {
           force: true,
           lock: true,
           offset: -(+gsap.getProperty("#article", "paddingTop") * 1.5),
+          onComplete: () => {
+            tocScrollTriggers.forEach((st) => {
+              st.enable();
+            });
+          },
         });
       }
     },

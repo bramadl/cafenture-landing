@@ -1,13 +1,22 @@
 import { type FC, type HTMLAttributes } from "react";
-import { cn } from "@cafenture/lib/utils";
+import { format } from "date-fns";
+import { id } from "date-fns/locale";
 import Link from "next/link";
 import Image from "next/image";
+
+import {
+  type Spotlight as ISpotlight,
+  type Thumbnail,
+} from "@cafenture/content/remotes/spotlights";
 import { Badge } from "@cafenture/components/ui/badge";
+import { cn } from "@cafenture/lib/utils";
 
 interface SpotlightComponents {
-  Author: FC<HTMLAttributes<HTMLDivElement>>;
+  Author: FC<
+    HTMLAttributes<HTMLDivElement> & Pick<ISpotlight, "createdAt" | "createdBy">
+  >;
   Description: FC<HTMLAttributes<HTMLParagraphElement>>;
-  Figure: FC<HTMLAttributes<HTMLDivElement>>;
+  Thumbnail: FC<HTMLAttributes<HTMLDivElement> & Thumbnail>;
   Tags: FC<
     HTMLAttributes<HTMLDivElement> & {
       tags?: string[];
@@ -49,7 +58,7 @@ Spotlight.Title = function Title({ url, ...props }) {
         props.className
       )}
     >
-      <Link className="after:absolute after:inset-0" href={url}>
+      <Link className="after:absolute after:inset-0" href={url} scroll>
         {props.children}
       </Link>
     </h2>
@@ -65,31 +74,46 @@ Spotlight.Description = function Description({ ...props }) {
   );
 };
 
-Spotlight.Author = function Author() {
+Spotlight.Author = function Author({
+  createdAt,
+  createdBy: { name, picture },
+}) {
   return (
     <div className="flex flex-row items-center gap-3 mt-6">
       <Image
-        alt="Jack"
+        alt={name}
         className="rounded-full"
         height="32"
-        src="https://avatar.vercel.sh/jack"
+        src={picture}
         width="32"
       />
       <p className="text-secondary text-sm">
-        Ditulis oleh <strong>Jack</strong> pada 3 Juli 2024
+        Ditulis oleh <strong>{name}</strong> <br /> pada{" "}
+        {format(createdAt, "dd MMMM yyyy", { locale: id })}
       </p>
     </div>
   );
 };
 
-Spotlight.Figure = function Figure({ ...props }) {
+Spotlight.Thumbnail = function Thumbnail({
+  fileName,
+  height,
+  url,
+  width,
+  ...props
+}) {
   return (
     <figure
       {...props}
-      className={cn(
-        "w-full aspect-video bg-slate-200 animate-pulse",
-        props.className
-      )}
-    />
+      className={cn("w-full aspect-video overflow-hidden bg-slate-200", props.className)}
+    >
+      <Image
+        alt={fileName}
+        className="w-full h-full object-cover object-bottom select-none pointer-events-none"
+        height={height}
+        src={url}
+        width={width}
+      />
+    </figure>
   );
 };

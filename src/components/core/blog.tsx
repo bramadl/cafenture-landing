@@ -13,8 +13,7 @@ export const Blog: FC<HTMLAttributes<HTMLDivElement>> = ({
         "flex-1 max-w-none prose first:prose-h2:mt-0",
         props.className
       )}
-    >
-      {children}
-    </div>
+      dangerouslySetInnerHTML={{ __html: children as TrustedHTML }}
+    />
   );
 };

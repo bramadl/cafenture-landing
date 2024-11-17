@@ -22,7 +22,10 @@ export const FeaturedSpotlight = () => {
           nobis hic inventore harum sint adipisci! Culpa commodi mollitia
           repellendus perspiciatis quibusdam vitae obcaecati sequi totam.
         </Spotlight.Description>
-        <Spotlight.Author />
+        <Spotlight.Author
+          createdAt={new Date().toString()}
+          createdBy={{ name: "Jack", picture: "https://avatar.vercel.sh/jack" }}
+        />
       </Spotlight>
       <figure className="row-start-1 xl:col-start-2 aspect-video p-6">
         <Image

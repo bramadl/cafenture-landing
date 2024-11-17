@@ -10,34 +10,44 @@ import {
   LinkedinShareButton,
   LinkedinIcon,
 } from "next-share";
-import {} from "next-share";
 
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 
-export const ShareButtons = () => {
+export const ShareButtons = ({
+  caption,
+  tags,
+  title,
+}: {
+  caption: string;
+  tags: string[];
+  title: string;
+}) => {
+  const [url, setUrl] = useState<string>();
+  useEffect(() => {
+    if ("location" in window) setUrl(location.href);
+  }, []);
+
+  if (!url) return null;
   return (
     <Fragment>
       <TwitterShareButton
-        url={"https://github.com/next-share"}
-        title={"next-share is a social share buttons for your next React apps."}
+        hashtags={tags.map((tag) => tag.replaceAll(" ", ""))}
+        url={url}
+        title={title}
       >
         <TwitterIcon size={32} round />
       </TwitterShareButton>
       <FacebookShareButton
-        url={"https://github.com/next-share"}
-        quote={"next-share is a social share buttons for your next React apps."}
-        hashtag={"#nextshare"}
+        url={url}
+        quote={title}
+        hashtag={tags[0].replaceAll(" ", "")}
       >
         <FacebookIcon size={32} round />
       </FacebookShareButton>
-      <LinkedinShareButton url={"https://github.com/next-share"}>
+      <LinkedinShareButton url={url} title={title} summary={caption}>
         <LinkedinIcon size={32} round />
       </LinkedinShareButton>
-      <WhatsappShareButton
-        url={"https://github.com/next-share"}
-        title={"next-share is a social share buttons for your next React apps."}
-        separator=":: "
-      >
+      <WhatsappShareButton url={url} title={title} separator=" - ">
         <WhatsappIcon size={32} round />
       </WhatsappShareButton>
     </Fragment>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { type Thumbnail } from "@cafenture/content/remotes/spotlights";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,16 +9,20 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@cafenture/components/ui/breadcrumb";
+import { CafentureSpotlightsUrl, HomeUrl } from "@cafenture/content/menus";
 import { Section } from "@cafenture/components/core/section";
 
 import { Spotlight } from "../../_/spotlight";
-import { CafentureSpotlightsUrl, HomeUrl } from "@cafenture/content/menus";
 
 export const HeroSection = ({
   caption,
+  tags,
+  thumbnail: { fileName, height, url, width },
   title,
 }: {
   caption: string;
+  tags: string[];
+  thumbnail: Thumbnail;
   title: string;
 }) => {
   return (
@@ -45,19 +50,19 @@ export const HeroSection = ({
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <Spotlight.Tags />
+        <Spotlight.Tags tags={tags} />
         <Section.Title as="h1" className="sm:leading-tight lg:text-left">
           {title}
         </Section.Title>
         <Section.Caption className="lg:text-left">{caption}</Section.Caption>
       </Section.Header>
-      <figure className="flex-1">
+      <figure className="flex-1 overflow-hidden bg-slate-200">
         <Image
-          alt="Mengapa Platform Rekomendasi Itu Penting: Temukan Kedai Kopi yang Sempurna untuk Anda"
+          alt={fileName}
           className="w-full h-full object-cover pointer-events-none select-none"
-          height={320}
-          src="https://images.unsplash.com/photo-1651449815995-9419a04685aa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          width={640}
+          height={height}
+          src={url}
+          width={width}
         />
       </figure>
     </Section>

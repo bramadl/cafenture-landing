@@ -1,9 +1,14 @@
+import { type Spotlight } from "@cafenture/content/remotes/spotlights";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
 import { SpotlightCard } from "../../_/spotlight-card";
 
-export const MoreSpotlightsSection = () => {
+export const MoreSpotlightsSection = ({
+  spotlights,
+}: {
+  spotlights: Spotlight[];
+}) => {
   return (
     <Section id="background-section">
       <Section.Header className="mx-0 lg:items-start">
@@ -19,13 +24,11 @@ export const MoreSpotlightsSection = () => {
         </Section.Caption>
       </Section.Header>
       <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {Array(3)
-          .fill(null)
-          .map((_, key) => (
-            <li key={key}>
-              <SpotlightCard />
-            </li>
-          ))}
+        {spotlights.map((spotlight, key) => (
+          <li key={key}>
+            <SpotlightCard {...spotlight} />
+          </li>
+        ))}
       </ul>
     </Section>
   );
