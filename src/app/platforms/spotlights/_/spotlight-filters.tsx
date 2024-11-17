@@ -31,7 +31,7 @@ export const SpotlightFilters = () => {
   return (
     <div>
       <DropdownMenu>
-        <DropdownMenuTrigger asChild className="xl:hidden">
+        <DropdownMenuTrigger asChild className="lg:hidden">
           <Button
             className="bg-slate-50 hover:bg-slate-100 text-slate-800 hover:text-slate-800"
             size="icon"
@@ -55,7 +55,7 @@ export const SpotlightFilters = () => {
         </DropdownMenuContent>
       </DropdownMenu>
       <Select value={defaultValue} onValueChange={setDefaultValue}>
-        <SelectTrigger className="hidden md:flex w-[320px]">
+        <SelectTrigger className="hidden lg:flex w-[320px]">
           <span>
             {
               filters
