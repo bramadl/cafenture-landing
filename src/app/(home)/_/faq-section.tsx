@@ -3,9 +3,12 @@ import { Question } from "@phosphor-icons/react/dist/ssr";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
-import { FaqAccordion } from "./faq-accordion";
+import { FaqAccordion } from "../../_/faq-accordion";
+import { getFeaturedFaqs } from "@cafenture/content/remotes/faqs";
 
-export const FaqSection = () => {
+export const FaqSection = async () => {
+  const faqs = await getFeaturedFaqs();
+
   return (
     <Section id="faq-section">
       <Section.Header>
@@ -24,7 +27,7 @@ export const FaqSection = () => {
           terbaik.
         </Section.Caption>
       </Section.Header>
-      <FaqAccordion />
+      <FaqAccordion faqs={faqs} />
     </Section>
   );
 };

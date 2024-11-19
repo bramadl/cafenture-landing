@@ -11,7 +11,6 @@ import {
 } from "@cafenture/content/features";
 import { cn } from "@cafenture/lib/utils";
 
-import { buttonVariants } from "../ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,20 +21,23 @@ import {
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
 import { Separator } from "../ui/separator";
+import { buttonVariants } from "../ui/button";
 
 import {
   CafentureMembershipUrl,
   CafentureMerchantUrl,
   CafentureSpotlightsUrl,
   CafentureStoryUrl,
-  HelpCenterUrl,
   HomeUrl,
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
+  UserPrivacyAndPoliciesUrl,
+  UserQuestionsUrl,
+  UserTermsAndConditionsUrl,
 } from "../../content/menus";
-import { WavyLines } from "../svg/wavy-lines";
 import { Logo } from "../ui/logo";
+import { WavyLines } from "../svg/wavy-lines";
 
 const menus = [
   {
@@ -73,7 +75,7 @@ export const DesktopNavigationMenu = () => {
           <NavigationMenuTrigger>Tentang Kami</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-[600px] grid grid-cols-[240px_1fr] gap-4 p-6">
-              <li className="relative row-span-3 flex flex-col justify-between p-6 bg-gradient-to-br from-slate-800 to-slate-950 rounded-lg">
+              <li className="relative row-span-3 flex flex-col justify-between p-6 bg-gradient-to-br from-slate-800 to-slate-950 rounded-lg overflow-hidden">
                 <Logo className="size-16" type="light" />
                 <article>
                   <p className="font-semibold text-lg text-white">
@@ -179,11 +181,33 @@ export const DesktopNavigationMenu = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href={HelpCenterUrl.url} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              {HelpCenterUrl.label}
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuTrigger>Pusat Dukungan</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="w-[600px] grid grid-cols-[1fr_240px] gap-4 p-6">
+              {[
+                UserQuestionsUrl,
+                UserPrivacyAndPoliciesUrl,
+                UserTermsAndConditionsUrl,
+              ].map((link, key) => (
+                <ListItem key={key} href={link.url} title={link.label}>
+                  {link.description}
+                </ListItem>
+              ))}
+              <li className="relative col-start-2 row-start-1 row-end-4 flex flex-col justify-between p-6 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg overflow-hidden">
+                <Logo className="size-16" type="light" />
+                <article>
+                  <p className="font-semibold text-lg">Feature Requests</p>
+                  <p className="text-sm text-black/75">
+                    Ikut Serta Bentuk Masa Depan Platform Kami
+                  </p>
+                  <small className="inline-block mt-8 text-xs">
+                    Segera Datang
+                  </small>
+                </article>
+                <WavyLines className="absolute inset-0 pointer-events-none rotate-90 scale-[2] invert" />
+              </li>
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

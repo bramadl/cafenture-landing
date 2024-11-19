@@ -14,7 +14,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export const PinnedSection: FC<HTMLAttributes<HTMLDivElement>> = ({
   ...props
 }) => {
-  const { width = 0 } = useWindowSize();
+  const { height = 0, width = 0 } = useWindowSize();
 
   const lenis = useLenis();
   useEffect(() => {
@@ -68,7 +68,7 @@ export const PinnedSection: FC<HTMLAttributes<HTMLDivElement>> = ({
         });
       }, 50);
     },
-    { dependencies: [lenis, width], revertOnUpdate: true }
+    { dependencies: [lenis, height, width], revertOnUpdate: true }
   );
 
   return (
@@ -76,7 +76,7 @@ export const PinnedSection: FC<HTMLAttributes<HTMLDivElement>> = ({
       ref={ref}
       {...props}
       className={cn(
-        "xl:w-[320px] flex flex-col gap-16 self-start",
+        "xl:w-[320px] flex flex-col gap-16 self-start shrink-0",
         props.className
       )}
     />

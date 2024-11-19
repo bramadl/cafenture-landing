@@ -15,7 +15,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export const TableOfContent: FC<
   HTMLAttributes<HTMLDivElement> & { contents: { id: string; label: string }[] }
 > = ({ contents, ...props }) => {
-  const { width = 0 } = useWindowSize();
+  const { height = 0, width = 0 } = useWindowSize();
   const [locationHash, setLocationHash] = useState<string>();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ export const TableOfContent: FC<
         });
       });
     },
-    { dependencies: [width], revertOnUpdate: true }
+    { dependencies: [height, width], revertOnUpdate: true }
   );
 
   return (

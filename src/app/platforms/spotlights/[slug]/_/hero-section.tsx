@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { type Thumbnail } from "@cafenture/content/remotes/spotlights";
 import {
   Breadcrumb,
   BreadcrumbItem,

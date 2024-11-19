@@ -17,7 +17,6 @@ import {
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
-  UserManualsAndSupportsUrl,
   UserPrivacyAndPoliciesUrl,
   UserQuestionsUrl,
   UserTermsAndConditionsUrl,
@@ -49,7 +48,6 @@ const menus = [
       UserQuestionsUrl,
       UserTermsAndConditionsUrl,
       UserPrivacyAndPoliciesUrl,
-      UserManualsAndSupportsUrl,
     ],
   },
 ];

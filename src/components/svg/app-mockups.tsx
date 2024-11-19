@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import TwoDevicesMockupPNG from "./assets/two-devices-mockup.png";
 import ThreeDevicesMockupPNG from "./assets/three-devices-mockup.png";
+import { cn } from "@cafenture/lib/utils";
 
 export const TwoDevicesMockup: FC<
   SVGAttributes<HTMLOrSVGElement> & { usePNG?: boolean }
@@ -11,7 +12,7 @@ export const TwoDevicesMockup: FC<
     return (
       <Image
         alt="Two Devices Mockup"
-        className={props.className}
+        className={cn("object-contain select-none pointer-events-none", props.className)}
         src={TwoDevicesMockupPNG}
       />
     );
@@ -80,7 +81,7 @@ export const ThreeDevicesMockup: FC<
     return (
       <Image
         alt="Two Devices Mockup"
-        className={props.className}
+        className={cn("object-contain select-none pointer-events-none", props.className)}
         src={ThreeDevicesMockupPNG}
       />
     );

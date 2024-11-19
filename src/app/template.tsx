@@ -1,6 +1,16 @@
+"use client";
+
 import * as motion from "framer-motion/client";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 export default function Template({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    return () => {
+      if (ScrollTrigger.getAll().length > 0) ScrollTrigger.killAll();
+    };
+  }, []);
+
   return (
     <motion.div
       initial={{ filter: "blur(8px)", y: 16, opacity: 0 }}

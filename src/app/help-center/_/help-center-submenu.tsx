@@ -3,17 +3,13 @@
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 
 import { JumpToContentButton } from "@cafenture/app/platforms/spotlights/[slug]/_/spotlight-article/jump-to-content-button";
-import { helpCenterMenus } from "@cafenture/content/help-center/menus";
 
-export const HelpCenterSubMenu = () => {
-  const pathname = usePathname();
-
-  const { width = 0 } = useWindowSize();
+export const HelpCenterSubMenu = ({ menus }: { menus: TableOfContent[] }) => {
+  const { height = 0, width = 0 } = useWindowSize();
   const [locationHash, setLocationHash] = useState<string>();
 
   const ref = useRef<HTMLDivElement>(null);
@@ -45,24 +41,21 @@ export const HelpCenterSubMenu = () => {
         });
       });
     },
-    { dependencies: [width], revertOnUpdate: true }
+    { dependencies: [height, width], revertOnUpdate: true }
   );
-
-  const contents = helpCenterMenus.find((menu) => menu.url === pathname);
-  if (!contents) return;
 
   return (
     <div ref={ref} className="flex flex-col gap-4">
       <p className="text-lg sm:text-xl font-semibold">Dalam Halaman Ini</p>
       <ul className="flex flex-col gap-1 border-l border-slate-300">
-        {contents.contents.map((link, key) => (
+        {menus.map((menu, key) => (
           <li key={key}>
             <JumpToContentButton
-              id={link.id}
-              isActive={locationHash === link.id}
+              id={menu.id}
+              isActive={locationHash === menu.id}
               onJumped={setLocationHash}
             >
-              {link.label}
+              {menu.label}
             </JumpToContentButton>
           </li>
         ))}

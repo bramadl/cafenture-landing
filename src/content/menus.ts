@@ -1,7 +1,6 @@
 import { Icon } from "@phosphor-icons/react";
 import {
   FileText,
-  Lifebuoy,
   Question,
   ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
@@ -75,25 +74,11 @@ export const ModuleCoffeeShopInformationUrl: MenuUrl = {
     "Modul informasi kedai kopi yang memiliki data dan informasi terlengkap.",
 };
 
-export const HelpCenterUrl: MenuUrl = {
-  url: "/help-center",
-  label: "Pusat Dukungan",
-  description: "",
-};
-
-export const UserManualsAndSupportsUrl: MenuUrl = {
-  icon: Lifebuoy,
-  url: "/help-center",
-  label: "Dukungan dan Panduan",
-  description: "Temukan solusi dan panduan lengkap untuk membantu Anda.",
-};
-
 export const UserPrivacyAndPoliciesUrl: MenuUrl = {
   icon: FileText,
   url: "/help-center/privacy-and-policies",
   label: "Syarat dan Kebijakan",
-  description:
-    "Ketentuan dan peraturan yang berlaku untuk penggunaan layanan.",
+  description: "Ketentuan dan peraturan yang berlaku untuk penggunaan layanan.",
 };
 
 export const UserQuestionsUrl: MenuUrl = {

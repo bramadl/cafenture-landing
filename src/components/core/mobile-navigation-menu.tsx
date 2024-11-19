@@ -17,11 +17,13 @@ import {
   CafentureMerchantUrl,
   CafentureSpotlightsUrl,
   CafentureStoryUrl,
-  HelpCenterUrl,
   HomeUrl,
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
+  UserPrivacyAndPoliciesUrl,
+  UserQuestionsUrl,
+  UserTermsAndConditionsUrl,
 } from "@cafenture/content/menus";
 
 import { Button } from "../ui/button";
@@ -117,14 +119,30 @@ export const MobileNavigationMenu = () => {
             </ul>
           </li>
           <li className="flex flex-col gap-4">
-            <Link
-              className="inline-flex items-center gap-4 font-semibold text-lg"
-              href={HelpCenterUrl.url}
-              onClick={closeDrawer}
-            >
-              <ArrowRight />
-              {HelpCenterUrl.label}
-            </Link>
+            <p className="inline-flex items-center gap-4 font-semibold text-lg">
+              Pusat Dukungan
+            </p>
+            <ul className="flex flex-col gap-6">
+              {[
+                UserQuestionsUrl,
+                UserPrivacyAndPoliciesUrl,
+                UserTermsAndConditionsUrl,
+              ].map((link, key) => (
+                <li key={key}>
+                  <div className="relative flex flex-col gap-2">
+                    <Link
+                      className="inline-flex items-center gap-4 text-base after:absolute after:inset-0"
+                      href={link.url}
+                      onClick={closeDrawer}
+                    >
+                      <ArrowRight />
+                      {link.label}
+                    </Link>
+                    <p className="text-secondary text-sm">{link.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </li>
         </ul>
         <div className="flex items-center gap-4 p-6 border-t">

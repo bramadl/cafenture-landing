@@ -4,10 +4,7 @@ import { id } from "date-fns/locale";
 import Link from "next/link";
 import Image from "next/image";
 
-import {
-  type Spotlight as ISpotlight,
-  type Thumbnail,
-} from "@cafenture/content/remotes/spotlights";
+import { type ISpotlight } from "@cafenture/content/remotes/spotlights";
 import { Badge } from "@cafenture/components/ui/badge";
 import { cn } from "@cafenture/lib/utils";
 
@@ -105,7 +102,10 @@ Spotlight.Thumbnail = function Thumbnail({
   return (
     <figure
       {...props}
-      className={cn("w-full aspect-video overflow-hidden bg-slate-200", props.className)}
+      className={cn(
+        "w-full aspect-video overflow-hidden bg-slate-200",
+        props.className
+      )}
     >
       <Image
         alt={fileName}

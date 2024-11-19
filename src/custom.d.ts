@@ -6,3 +6,15 @@ interface PageProps<
   params: P;
   searchParams: S;
 }
+
+interface TableOfContent {
+  id: string;
+  label: string;
+}
+
+interface Thumbnail {
+  fileName: string;
+  height: number;
+  width: number;
+  url: string;
+}
