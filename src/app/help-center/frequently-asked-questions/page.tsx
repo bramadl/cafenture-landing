@@ -39,7 +39,7 @@ export default async function Page() {
           {Object.entries(faqs).map(
             ([category, { context, description, faqs }], key) => {
               return (
-                <div key={key} className="first:mt-0 mt-12 lg:mt-16">
+                <div key={key} className="xl:first:mt-0 mt-12 lg:mt-16">
                   <h2 id={category}>{context}</h2>
                   <p>{description}</p>
                   <div className="not-prose">

@@ -34,7 +34,7 @@ export default function Page() {
             ]}
           />
         </PinnedSection>
-        <Blog useMarkUp={false}>
+        <Blog className="xl:first:mt-0 mt-12 lg:mt-16" useMarkUp={false}>
           <Fragment>
             <p>
               <strong>PT. ABV Digital Indonesia</strong> selaku pemilik aplikasi{" "}
