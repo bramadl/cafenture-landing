@@ -20,10 +20,13 @@ export default async function Page() {
         label="Pertanyaan Pengguna"
         description="Temukan jawaban dan pertanyaan umum dari pengguna lainnya atau ajukan pertanyaan Anda sendiri seputar platform rekomendasi dan pencarian kedai kopi kami."
       >
-        Pertanyaan Umum Terkait Platform Rekomendasi{" "}
-        <span className="text-primary">Kedai Kopi</span> Kami
+        Pertanyaan Umum Terkait Platform{" "}
+        <span className="text-primary">Cafenture Indonesia</span>
       </HeroSection>
-      <Section id="article" className="xl:flex-row xl:justify-start sm:gap-0 xl:gap-[100px]">
+      <Section
+        id="article"
+        className="xl:flex-row xl:justify-start sm:gap-0 xl:gap-[100px]"
+      >
         <PinnedSection>
           <HelpCenterSubMenu
             menus={categories.map((category) => ({

@@ -1,4 +1,3 @@
-// import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 import { FooterMenu } from "./footer-menu";
@@ -23,17 +22,6 @@ export const Footer = () => {
           <p className="text-secondary text-sm">
             ©2024 - Hak Cipta Dilindungi.
           </p>
-          {/* <ul className="flex items-center gap-6">
-            <li>
-              <Link
-                className="inline-flex items-center gap-2 text-secondary text-sm"
-                href="https://fluxt.agency"
-              >
-                Fluxt Agency
-                <ArrowUpRight className="size-4" />
-              </Link>
-            </li>
-          </ul> */}
         </div>
       </div>
     </footer>

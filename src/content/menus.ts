@@ -77,8 +77,8 @@ export const ModuleCoffeeShopInformationUrl: MenuUrl = {
 export const UserPrivacyAndPoliciesUrl: MenuUrl = {
   icon: FileText,
   url: "/help-center/privacy-and-policies",
-  label: "Syarat dan Kebijakan",
-  description: "Ketentuan dan peraturan yang berlaku untuk penggunaan layanan.",
+  label: "Kebijakan dan Privasi",
+  description: "Komitmen kami terhadap privasi dan perlindungan data Anda.",
 };
 
 export const UserQuestionsUrl: MenuUrl = {
@@ -91,8 +91,8 @@ export const UserQuestionsUrl: MenuUrl = {
 export const UserTermsAndConditionsUrl: MenuUrl = {
   icon: ShieldCheck,
   url: "/help-center/terms-and-conditions",
-  label: "Kebijakan dan Privasi",
-  description: "Komitmen kami terhadap privasi dan perlindungan data Anda.",
+  label: "Syarat dan Ketentuan",
+  description: "Ketentuan dan peraturan yang berlaku untuk penggunaan layanan.",
 };
 
 export const EmailContactUrl: MenuUrl = {

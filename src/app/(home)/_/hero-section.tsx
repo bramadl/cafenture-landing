@@ -1,5 +1,4 @@
 import { Section } from "@cafenture/components/core/section";
-// import { Trophy } from "@cafenture/components/svg/trophy";
 import { Button } from "@cafenture/components/ui/button";
 import { Tag } from "@cafenture/components/ui/tag";
 import { Trophy } from "@phosphor-icons/react/dist/ssr";

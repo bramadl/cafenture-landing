@@ -1,6 +1,6 @@
 import { type FC } from "react";
 
-import { type Spotlight as ISpotlight } from "@cafenture/content/remotes/spotlights";
+import { type ISpotlight } from "@cafenture/content/remotes/spotlights";
 
 import { Spotlight } from "./spotlight";
 

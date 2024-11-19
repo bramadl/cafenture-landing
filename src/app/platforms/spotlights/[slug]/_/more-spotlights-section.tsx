@@ -1,4 +1,4 @@
-import { type Spotlight } from "@cafenture/content/remotes/spotlights";
+import { type ISpotlight } from "@cafenture/content/remotes/spotlights";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
@@ -7,7 +7,7 @@ import { SpotlightCard } from "../../_/spotlight-card";
 export const MoreSpotlightsSection = ({
   spotlights,
 }: {
-  spotlights: Spotlight[];
+  spotlights: ISpotlight[];
 }) => {
   return (
     <Section id="background-section">
