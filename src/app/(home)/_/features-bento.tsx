@@ -60,7 +60,7 @@ const BentoCard: FC<BentoCardProps> = ({
     <section
       {...props}
       className={cn(
-        "flex flex-col justify-between gap-6 p-6 rounded-2xl bg-slate-50 border border-secondary-200 shadow",
+        "flex flex-col justify-between gap-6 p-6 rounded-2xl bg-slate-50",
         props.className
       )}
     >

@@ -104,7 +104,7 @@ export const MerchantBeams = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[480px] sm:h-[640px] rounded-[64px] bg-slate-50 border border-secondary-200 shadow overflow-hidden"
+      className="relative w-full h-[480px] sm:h-[640px] rounded-[64px] bg-slate-50 overflow-hidden"
     >
       <div id="left-merchants">
         <BeamContainer

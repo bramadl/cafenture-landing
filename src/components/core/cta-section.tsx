@@ -10,7 +10,7 @@ export const CallToActionSection = () => {
         className="flex-col-reverse lg:flex-row lg:justify-between overflow-hidden !py-0 gap-0 md:gap-0 lg:gap-[100px]"
       >
         <figure className="relative flex-1">
-          <TwoDevicesMockup usePNG className="lg:absolute lg:bottom-0 lg:right-0 lg:max-w-[480px] w-full h-full" />
+          <TwoDevicesMockup usePNG className="lg:absolute lg:bottom-0 lg:right-0 lg:max-w-[480px] w-full" />
         </figure>
         <section className="flex-1 flex flex-col gap-10 py-16 sm:py-[100px]">
           <header className="flex flex-col gap-4">

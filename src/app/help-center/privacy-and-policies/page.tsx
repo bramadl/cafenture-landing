@@ -25,7 +25,7 @@ export default async function Page() {
         <PinnedSection>
           <HelpCenterSubMenu menus={content.tableOfContent} />
         </PinnedSection>
-        <Blog className="xl:first:mt-0 mt-12 lg:mt-16">{content.content.html}</Blog>
+        <Blog className="xl:first:mt-0 mt-12 lg:mt-16 xl:mt-0">{content.content.html}</Blog>
       </Section>
     </main>
   );

@@ -18,7 +18,7 @@ const ReviewCard = ({
   body: string;
 }) => {
   return (
-    <figure className="relative w-64 p-4 rounded-xl bg-slate-50 border border-secondary-200 shadow">
+    <figure className="relative w-64 p-4 rounded-xl bg-slate-50">
       <div className="flex flex-row items-center gap-2">
         <Image
           alt={username}
