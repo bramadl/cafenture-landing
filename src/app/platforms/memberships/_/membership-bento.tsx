@@ -1,13 +1,14 @@
 import { type FC, type HTMLAttributes } from "react";
 import { type Icon } from "@phosphor-icons/react";
 
-import {
-  AccountManagementFeatures,
-  CoffeeShopDiscoveryFeatures,
-  CoffeeShopInformationFeatures,
-} from "@cafenture/content/features";
 import { Article } from "@cafenture/components/core/article";
 import { cn } from "@cafenture/lib/utils";
+import {
+  Gift,
+  IdentificationCard,
+  Star,
+  Tag,
+} from "@phosphor-icons/react/dist/ssr";
 
 interface BentoCardProps extends HTMLAttributes<HTMLDivElement> {
   description: string;
@@ -58,7 +59,7 @@ const BentoCard: FC<BentoCardProps> = ({
     <section
       {...props}
       className={cn(
-        "flex flex-col justify-between gap-6 p-6 rounded-2xl bg-slate-50",
+        "flex flex-col justify-end gap-6 p-6 rounded-2xl bg-slate-50",
         props.className
       )}
     >
@@ -75,59 +76,37 @@ const BentoGrid: FC<HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
     <div
       {...props}
       className={cn(
-        "grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-3 xl:auto-rows-[320px] gap-6",
+        // xl:auto-rows-[22rem]
+        "grid md:grid-cols-2 xl:grid-cols-3 gap-6",
         props.className
       )}
     />
   );
 };
 
-export const FeaturesBento = () => {
+export const MembershipsBento = () => {
   return (
     <BentoGrid>
       <BentoCard
-        className="sm:col-span-1"
-        icon={AccountManagementFeatures[3].icon}
-        title={AccountManagementFeatures[3].name}
-        description={AccountManagementFeatures[3].description}
+        className="col-span-2"
+        icon={IdentificationCard}
+        title="Identitas Keanggotaan yang Berkelas"
+        description="Sebagai simbol keanggotaan Anda, kartu membership tidak hanya berfungsi sebagai akses, tetapi juga mencerminkan status Anda sebagai bagian dari komunitas premium."
       />
       <BentoCard
-        figures={{ layout: "one-column" }}
-        icon={AccountManagementFeatures[4].icon}
-        title={AccountManagementFeatures[4].name}
-        description={AccountManagementFeatures[4].description}
+        icon={Gift}
+        title="Nikmati Keistimewaan yang Tidak Dimiliki Orang Lain"
+        description="Hanya untuk Anda yang menjadi anggota eksklusif, nikmati berbagai promosi istimewa yang dirancang khusus dari pemilik kedai kopi. Penawaran ini tidak tersedia di tempat lain, memberikan Anda keunggulan yang nyata."
       />
       <BentoCard
-        className="sm:row-span-2"
-        figures={{ layout: "three-rows" }}
-        icon={CoffeeShopDiscoveryFeatures[1].icon}
-        title={CoffeeShopDiscoveryFeatures[1].name}
-        description={CoffeeShopDiscoveryFeatures[1].description}
+        icon={Tag}
+        title="Keuntungan Lebih di Setiap Transaksi"
+        description="Anggota premium mendapatkan lebih dari sekadar promosi biasa. Nikmati penawaran ekstra yang memberikan nilai tambah pada setiap kunjungan Anda ke kedai kopi favorit."
       />
       <BentoCard
-        className="sm:row-span-2"
-        figures={{ layout: "three-rows" }}
-        icon={CoffeeShopDiscoveryFeatures[5].icon}
-        title={CoffeeShopDiscoveryFeatures[5].name}
-        description={CoffeeShopDiscoveryFeatures[5].description}
-      />
-      <BentoCard
-        className="md:col-span-2 xl:col-span-1"
-        figures={{ layout: "two-column-reversed" }}
-        icon={CoffeeShopDiscoveryFeatures[3].icon}
-        title={CoffeeShopDiscoveryFeatures[3].name}
-        description={CoffeeShopDiscoveryFeatures[3].description}
-      />
-      <BentoCard
-        figures={{ layout: "one-column" }}
-        icon={CoffeeShopInformationFeatures[0].icon}
-        title={CoffeeShopInformationFeatures[0].name}
-        description={CoffeeShopInformationFeatures[0].description}
-      />
-      <BentoCard
-        icon={CoffeeShopInformationFeatures[3].icon}
-        title={CoffeeShopInformationFeatures[3].name}
-        description={CoffeeShopInformationFeatures[3].description}
+        icon={Star}
+        title="Hadiah dengan Sentuhan Keistimewaan"
+        description="Anggota premium berhak mendapatkan hadiah spesial yang dirancang terbatas dan eksklusif. Dari produk unik hingga pengalaman tak terlupakan, semuanya hanya untuk Anda."
       />
     </BentoGrid>
   );

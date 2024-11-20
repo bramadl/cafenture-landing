@@ -1,6 +1,8 @@
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
+import { ReachabilityGlobe } from "./reachability-globe";
+
 export const ReachabilitySection = () => {
   return (
     <Section id="reachability-section">
@@ -18,6 +20,7 @@ export const ReachabilitySection = () => {
           preferensi mereka.
         </Section.Caption>
       </Section.Header>
+      <ReachabilityGlobe />
     </Section>
   );
 };
