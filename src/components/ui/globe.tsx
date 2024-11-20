@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import createGlobe, { COBEOptions } from "cobe";
@@ -40,7 +41,9 @@ export default function Globe({
   className?: string;
   config?: COBEOptions;
 }) {
-  let phi = 0;
+  const phi = useRef(0);
+  
+  // let phi = 0;
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef(null);
@@ -64,8 +67,8 @@ export default function Globe({
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
-      if (!pointerInteracting.current) phi += 0.005;
-      state.phi = phi + r;
+      if (!pointerInteracting.current) phi.current += 0.005;
+      state.phi = phi.current + r;
       state.width = width * 2;
       state.height = width * 2;
     },
@@ -91,7 +94,7 @@ export default function Globe({
 
     setTimeout(() => (canvasRef.current!.style.opacity = "1"));
     return () => globe.destroy();
-  }, []);
+  }, [config, onRender, onResize, width]);
 
   return (
     <div
