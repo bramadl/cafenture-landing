@@ -1,20 +1,44 @@
+import Image from "next/image";
 import { type FC } from "react";
 
 export interface LogoProps {
+  usePNG?: boolean;
   className?: string;
   type?: "dark" | "light";
 }
 
-export const Logo: FC<LogoProps> = ({ className, type = "dark" }) => {
+export const Logo: FC<LogoProps> = ({
+  className,
+  type = "dark",
+  usePNG = false,
+}) => {
   switch (type) {
     case "dark":
-      return <AlphaDark className={className} />;
+      return <AlphaDark className={className} usePNG={usePNG} />;
     case "light":
-      return <AlphaLight className={className} />;
+      return <AlphaLight className={className} usePNG={usePNG} />;
   }
 };
 
-const AlphaDark = ({ className }: { className?: string }) => {
+const AlphaDark = ({
+  className,
+  usePNG,
+}: {
+  className?: string;
+  usePNG: boolean;
+}) => {
+  if (usePNG) {
+    return (
+      <Image
+        alt="Logo Dark"
+        className={className}
+        src="/logos/alpha-dark.png"
+        height={100}
+        width={100}
+      />
+    );
+  }
+
   return (
     <svg
       className={className}
@@ -302,7 +326,25 @@ const AlphaDark = ({ className }: { className?: string }) => {
   );
 };
 
-const AlphaLight = ({ className }: { className?: string }) => {
+const AlphaLight = ({
+  className,
+  usePNG,
+}: {
+  className?: string;
+  usePNG: boolean;
+}) => {
+  if (usePNG) {
+    return (
+      <Image
+        alt="Logo Light"
+        className={className}
+        src="/logos/alpha-light.png"
+        height={100}
+        width={100}
+      />
+    );
+  }
+
   return (
     <svg
       className={className}
