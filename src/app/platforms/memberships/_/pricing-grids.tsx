@@ -59,7 +59,7 @@ export const PricingGrids = () => {
       <PricingCard
         description="Dapatkan manfaat penuh sepanjang tahun dengan potongan harga eksklusif, hadiah spesial, dan program loyalitas yang bernilai lebih."
         label="Keanggotaan Tahunan"
-        price={420_000}
+        price={480_000}
         title="Investasi Terbaik"
       />
     </div>
