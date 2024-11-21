@@ -1,6 +1,52 @@
-import { Marquee } from "@cafenture/components/ui/marquee";
+import Image from "next/image";
 
-import { Logo1, Logo2, Logo3, Logo4, Logo5, Logo6 } from "./merchant-logos";
+import { Marquee } from "@cafenture/components/ui/marquee";
+import { cn } from "@cafenture/lib/utils";
+
+import AnomaliCoffee from "@cafenture/content/assets/merchants/logos/anomali-coffee.png";
+import Coteca from "@cafenture/content/assets/merchants/logos/coteca.png";
+import DancingGoat from "@cafenture/content/assets/merchants/logos/dancing-goat.png";
+import NineCupsCoffee from "@cafenture/content/assets/merchants/logos/9-cups-coffee.png";
+import DuaMasa from "@cafenture/content/assets/merchants/logos/dua-masa.png";
+import FillmoreCoffee from "@cafenture/content/assets/merchants/logos/fillmore-coffee.png";
+import GutenMorgen from "@cafenture/content/assets/merchants/logos/guten-morgen.png";
+import I15 from "@cafenture/content/assets/merchants/logos/i15.png";
+import KiraKiraKopi from "@cafenture/content/assets/merchants/logos/kirakirakopi.png";
+import KopiDeo from "@cafenture/content/assets/merchants/logos/kopi-deo.png";
+import KopiKohlie from "@cafenture/content/assets/merchants/logos/kopi-kohlie.png";
+import KopiPraja from "@cafenture/content/assets/merchants/logos/kopi-praja.png";
+import KopiWangsa from "@cafenture/content/assets/merchants/logos/kopi-wangsa.png";
+import Kopilot from "@cafenture/content/assets/merchants/logos/kopilot.png";
+import Kopiluvium from "@cafenture/content/assets/merchants/logos/kopiluvium.png";
+import RelativeCoffee from "@cafenture/content/assets/merchants/logos/relative-coffee.png";
+import RelungKopi from "@cafenture/content/assets/merchants/logos/relung-kopi.png";
+import Tieambi from "@cafenture/content/assets/merchants/logos/tieambi.png";
+import TokoKopiMaru from "@cafenture/content/assets/merchants/logos/toko-kopi-maru.png";
+
+const merchants = [
+  AnomaliCoffee,
+  Coteca,
+  DancingGoat,
+  NineCupsCoffee,
+  DuaMasa,
+  FillmoreCoffee,
+  GutenMorgen,
+  I15,
+  KiraKiraKopi,
+  KopiDeo,
+  KopiKohlie,
+  KopiPraja,
+  KopiWangsa,
+  Kopilot,
+  Kopiluvium,
+  RelativeCoffee,
+  RelungKopi,
+  Tieambi,
+  TokoKopiMaru,
+];
+
+const firstRow = merchants.slice(0, merchants.length / 2);
+const secondRow = merchants.slice(merchants.length / 2);
 
 export const MerchantsMarquee = () => {
   return (
@@ -11,16 +57,30 @@ export const MerchantsMarquee = () => {
       </h2>
       <div className="relative w-full flex flex-col items-center justify-center gap-12 overflow-hidden">
         <Marquee className="[--duration:20s]">
-          {[Logo1, Logo2, Logo3, Logo4, Logo5, Logo6].map((Logo, key) => (
-            <Logo key={key} />
+          {firstRow.map((image, key) => (
+            <Image
+              key={key}
+              alt={image.src}
+              blurDataURL={image.blurDataURL}
+              className={cn("rounded size-10")}
+              height={image.height}
+              src={image}
+              width={image.width}
+            />
           ))}
         </Marquee>
         <Marquee reverse className="[--duration:20s]">
-          {[Logo1, Logo2, Logo3, Logo4, Logo5, Logo6]
-            .reverse()
-            .map((Logo, key) => (
-              <Logo key={key} />
-            ))}
+          {secondRow.map((image, key) => (
+            <Image
+              key={key}
+              alt={image.src}
+              blurDataURL={image.blurDataURL}
+              className={cn("rounded size-10")}
+              height={image.height}
+              src={image}
+              width={image.width}
+            />
+          ))}
         </Marquee>
         <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white" />

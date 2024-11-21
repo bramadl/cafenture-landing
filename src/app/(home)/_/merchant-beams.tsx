@@ -1,21 +1,27 @@
 "use client";
 
 import { type RefObject, Fragment, forwardRef, useRef } from "react";
+import Image, { type StaticImageData } from "next/image";
 
 import { AnimatedBeam } from "@cafenture/components/ui/animated-beam";
-import { DummyLogo } from "@cafenture/content/mocks/logos";
 import { Logo } from "@cafenture/components/ui/logo";
 import { cn } from "@cafenture/lib/utils";
+
+import AnomaliCoffee from "@cafenture/content/assets/merchants/logos/anomali-coffee.png";
+import Coteca from "@cafenture/content/assets/merchants/logos/coteca.png";
+import DancingGoat from "@cafenture/content/assets/merchants/logos/dancing-goat.png";
+import NineCupsCoffee from "@cafenture/content/assets/merchants/logos/9-cups-coffee.png";
+import DuaMasa from "@cafenture/content/assets/merchants/logos/dua-masa.png";
+import FillmoreCoffee from "@cafenture/content/assets/merchants/logos/fillmore-coffee.png";
+import GutenMorgen from "@cafenture/content/assets/merchants/logos/guten-morgen.png";
+import I15 from "@cafenture/content/assets/merchants/logos/i15.png";
 
 const LogoContainer = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
 >(({ className, children }, ref) => {
   return (
-    <div
-      ref={ref}
-      className={cn("z-10 p-4 rounded-2xl bg-slate-200", className)}
-    >
+    <div ref={ref} className={cn("z-10 bg-slate-200", className)}>
       {children}
     </div>
   );
@@ -23,7 +29,7 @@ const LogoContainer = forwardRef<
 LogoContainer.displayName = "LogoContainer";
 
 const BeamContainer = ({
-  _option,
+  image,
   baseRef,
   containerRef,
   fromRef,
@@ -32,7 +38,7 @@ const BeamContainer = ({
   size,
   toRef,
 }: {
-  _option: 1 | 2 | 3 | 4;
+  image: StaticImageData;
   baseRef: RefObject<HTMLDivElement>;
   containerRef: RefObject<HTMLDivElement>;
   fromRef: RefObject<HTMLDivElement>;
@@ -57,10 +63,24 @@ const BeamContainer = ({
           leftSide ? "!left-[-100%]" : "!right-[-100%]"
         )}
       >
-        <DummyLogo className={size} option={_option} />
+        <Image
+          alt={image.src}
+          blurDataURL={image.blurDataURL}
+          className={cn("rounded", size)}
+          height={image.height}
+          src={image}
+          width={image.width}
+        />
       </LogoContainer>
       <LogoContainer ref={fromRef} className={cn("absolute", position)}>
-        <DummyLogo className={size} option={_option} />
+        <Image
+          alt={image.src}
+          blurDataURL={image.blurDataURL}
+          className={cn("rounded", size)}
+          height={image.height}
+          src={image}
+          width={image.width}
+        />
       </LogoContainer>
       <AnimatedBeam
         containerRef={containerRef}
@@ -108,95 +128,95 @@ export const MerchantBeams = () => {
     >
       <div id="left-merchants">
         <BeamContainer
-          _option={1}
+          image={NineCupsCoffee}
           baseRef={_merchant1Ref}
           containerRef={containerRef}
           fromRef={merchant1Ref}
           position="left-[5%] sm:left-[5%] top-[15%]"
-          size="size-6 sm:size-12"
+          size="size-6 sm:size-20"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={2}
+          image={AnomaliCoffee}
           baseRef={_merchant2Ref}
           containerRef={containerRef}
           fromRef={merchant2Ref}
           position="left-[15%] sm:left-[25%] bottom-[35%] sm:bottom-[35%]"
-          size="size-4 sm:size-6"
+          size="size-4 sm:size-14"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={3}
+          image={Coteca}
           baseRef={_merchant3Ref}
           containerRef={containerRef}
           fromRef={merchant3Ref}
           position="left-[15%] sm:left-[15%] top-[35%] sm:top-[40%]"
-          size="size-4 sm:size-6"
+          size="size-4 sm:size-14"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={4}
+          image={DancingGoat}
           baseRef={_merchant4Ref}
           containerRef={containerRef}
           fromRef={merchant4Ref}
           position="left-[5%] sm:left-[10%] bottom-[15%]"
-          size="size-6 sm:size-10"
+          size="size-6 sm:size-16"
           toRef={containerRef}
         />
       </div>
 
       <LogoContainer
         ref={mainRef}
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-800"
+        className="rounded-2xl p-4 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-slate-800"
       >
         <Logo className="size-16 sm:size-[150px]" type="light" />
       </LogoContainer>
 
       <div id="right-merchants">
         <BeamContainer
-          _option={4}
+          image={DuaMasa}
           baseRef={_merchant5Ref}
           containerRef={containerRef}
           fromRef={merchant5Ref}
           leftSide={false}
           position="right-[5%] sm:right-[5%] bottom-[15%]"
-          size="size-6 sm:size-12"
+          size="size-6 sm:size-20"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={3}
+          image={FillmoreCoffee}
           baseRef={_merchant6Ref}
           containerRef={containerRef}
           fromRef={merchant6Ref}
           leftSide={false}
           position="right-[15%] sm:right-[25%] top-[35%] sm:top-[35%]"
-          size="size-4 sm:size-6"
+          size="size-4 sm:size-14"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={2}
+          image={GutenMorgen}
           baseRef={_merchant7Ref}
           containerRef={containerRef}
           fromRef={merchant7Ref}
           leftSide={false}
           position="right-[15%] sm:right-[15%] bottom-[35%] sm:bottom-[40%]"
-          size="size-4 sm:size-6"
+          size="size-4 sm:size-14"
           toRef={containerRef}
         />
 
         <BeamContainer
-          _option={1}
+          image={I15}
           baseRef={_merchant8Ref}
           containerRef={containerRef}
           fromRef={merchant8Ref}
           leftSide={false}
           position="right-[5%] sm:right-[10%] top-[15%]"
-          size="size-6 sm:size-10"
+          size="size-6 sm:size-16"
           toRef={containerRef}
         />
       </div>

@@ -2,21 +2,24 @@
 
 import { type FC, type RefObject, Fragment, forwardRef, useRef } from "react";
 import { User } from "@phosphor-icons/react";
+import Image, { type StaticImageData } from "next/image";
 
 import { AnimatedBeam } from "@cafenture/components/ui/animated-beam";
-import { DummyLogo } from "@cafenture/content/mocks/logos";
 import { Logo } from "@cafenture/components/ui/logo";
 import { cn } from "@cafenture/lib/utils";
+
+import KiraKiraKopi from "@cafenture/content/assets/merchants/logos/kirakirakopi.png";
+import KopiDeo from "@cafenture/content/assets/merchants/logos/kopi-deo.png";
+import KopiKohlie from "@cafenture/content/assets/merchants/logos/kopi-kohlie.png";
+import KopiPraja from "@cafenture/content/assets/merchants/logos/kopi-praja.png";
+import KopiWangsa from "@cafenture/content/assets/merchants/logos/kopi-wangsa.png";
 
 const LogoContainer = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
 >(({ className, children }, ref) => {
   return (
-    <div
-      ref={ref}
-      className={cn("z-10 p-4 rounded-2xl bg-slate-200", className)}
-    >
+    <div ref={ref} className={cn("z-10 bg-slate-200", className)}>
       {children}
     </div>
   );
@@ -32,8 +35,8 @@ const UserBeams: FC<UserBeamsProps> = ({ containerRef, mainRef }) => {
   const userRef = useRef<HTMLDivElement>(null);
   return (
     <Fragment>
-      <LogoContainer ref={userRef}>
-        <User className="size-6 text-secondary" weight="fill" />
+      <LogoContainer ref={userRef} className="p-4 rounded">
+        <User className="size-6 rounded text-secondary" weight="fill" />
       </LogoContainer>
       <AnimatedBeam
         containerRef={containerRef}
@@ -45,11 +48,11 @@ const UserBeams: FC<UserBeamsProps> = ({ containerRef, mainRef }) => {
 };
 
 interface MerchantBeamsProps extends UserBeamsProps {
-  _option: 1 | 2 | 3 | 4;
+  image: StaticImageData;
 }
 
 const MerchantBeams: FC<MerchantBeamsProps> = ({
-  _option,
+  image,
   containerRef,
   mainRef,
 }) => {
@@ -62,7 +65,14 @@ const MerchantBeams: FC<MerchantBeamsProps> = ({
         toRef={mainRef}
       />
       <LogoContainer ref={merchantRef}>
-        <DummyLogo className="size-6" option={_option} />
+        <Image
+          alt={image.src}
+          blurDataURL={image.blurDataURL}
+          className={cn("rounded size-14")}
+          height={image.height}
+          src={image}
+          width={image.width}
+        />
       </LogoContainer>
     </Fragment>
   );
@@ -88,18 +98,20 @@ export const MarketBeams = () => {
             />
           ))}
       </div>
-      <LogoContainer ref={mainRef} className="bg-slate-800">
+      <LogoContainer ref={mainRef} className="bg-slate-800 rounded-2xl p-4">
         <Logo className="size-16 sm:size-[150px]" type="light" />
       </LogoContainer>
       <div className="flex flex-col items-start gap-8">
-        {[1, 2, 3, 4, 1].map((m, key) => (
-          <MerchantBeams
-            key={key}
-            _option={m as 1 | 2 | 3 | 4}
-            containerRef={containerRef}
-            mainRef={mainRef}
-          />
-        ))}
+        {[KiraKiraKopi, KopiDeo, KopiKohlie, KopiPraja, KopiWangsa].map(
+          (logo, key) => (
+            <MerchantBeams
+              key={key}
+              image={logo}
+              containerRef={containerRef}
+              mainRef={mainRef}
+            />
+          )
+        )}
       </div>
     </div>
   );
