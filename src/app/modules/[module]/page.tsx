@@ -2,10 +2,12 @@ import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Article } from "@cafenture/components/core/article";
+import { Dots } from "@cafenture/components/svg/background/dots";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 import { modules } from "@cafenture/content/modules/modules";
 import { cn } from "@cafenture/lib/utils";
+import Image from "next/image";
 
 export const generateMetadata = async ({
   params,
@@ -58,15 +60,18 @@ export default async function Page({
         </Section.Header>
         <ul className="flex flex-col gap-[100px]">
           {features.map(
-            ({ description, details, icon: Icon, keyPoints, name }, key) => (
+            (
+              { description, details, icon: Icon, image, keyPoints, name },
+              key
+            ) => (
               <li
                 key={key}
-                className="flex flex-col xl:flex-row items-center gap-12 xl:gap-[100px]"
+                className="flex flex-col md:flex-row items-center gap-12 lg:gap-[100px]"
               >
                 <Article
                   className={cn(
                     "flex-1",
-                    key % 2 === 0 ? "order-2 xl:order-1" : "order-2"
+                    key % 2 === 0 ? "order-2 md:order-1" : "order-2"
                   )}
                   description={details || description}
                   details={keyPoints}
@@ -76,11 +81,21 @@ export default async function Page({
                 </Article>
                 <figure
                   className={cn(
-                    "w-full xl:w-auto xl:flex-1",
-                    key % 2 === 0 ? "order-1 xl:order-2" : "order-1"
+                    "relative w-full md:w-auto md:flex-1 aspect-[12/8] rounded-lg overflow-hidden",
+                    key % 2 === 0 ? "order-1 md:order-2" : "order-1"
                   )}
                 >
-                  <div className="w-full aspect-[12/8] rounded-lg bg-slate-200" />
+                  {image && (
+                    <Image
+                      alt={name}
+                      blurDataURL={image.blurDataURL}
+                      className="w-full h-full object-contain"
+                      height={image.height}
+                      src={image.src}
+                      width={image.width}
+                    />
+                  )}
+                  <Dots />
                 </figure>
               </li>
             )

@@ -1,4 +1,5 @@
 import { type Icon } from "@phosphor-icons/react";
+import { type StaticImageData } from "next/image";
 import {
   BellRinging,
   BookOpenText,
@@ -20,12 +21,34 @@ import {
   User,
 } from "@phosphor-icons/react/dist/ssr";
 
+import PengaturanKeamanan from "./assets/features/account-management/pengaturan-keamanan.png";
+import PengaturanPemberitahuan from "./assets/features/account-management/pengaturan-pemberitahuan.png";
+import PengaturanProfil from "./assets/features/account-management/pengaturan-profil.png";
+import PengaturanPreferensi from "./assets/features/account-management/pengaturan-preferensi.png";
+import PoinDanHadiah from "./assets/features/account-management/poin-dan-hadiah.png";
+import WishlistDanKoleksi from "./assets/features/account-management/wishlist-dan-koleksi.png";
+
+import InformasiPromosi from "./assets/features/coffee-shop-discovery/informasi-promosi.png";
+import JelajahiKoleksi from "./assets/features/coffee-shop-discovery/jelajahi-koleksi.png";
+import KurasiCerdas from "./assets/features/coffee-shop-discovery/kurasi-cerdas.png";
+import PetaDanNavigasi from "./assets/features/coffee-shop-discovery/peta-dan-navigasi.png";
+import PencarianCerdas from "./assets/features/coffee-shop-discovery/pencarian-cerdas.png";
+import RekomendasiCerdas from "./assets/features/coffee-shop-discovery/rekomendasi-cerdas.png";
+
+import DaftarMenuTerlengkap from "./assets/features/coffee-shop-information/daftar-menu-terlengkap.png";
+import GaleriDan360Tour from "./assets/features/coffee-shop-information/galeri-dan-360-tour.png";
+import InformasiEsensial from "./assets/features/coffee-shop-information/informasi-esensial.png";
+import NilaiPencocokanCerdas from "./assets/features/coffee-shop-information/nilai-pencocokan-cerdas.png";
+import UlasanKedaiKopi from "./assets/features/coffee-shop-information/ulasan-kedai-kopi.png";
+import TemaDanFasilitasLengkap from "./assets/features/coffee-shop-information/tema-dan-fasilitas-lengkap.png";
+
 export interface Feature {
   icon: Icon;
   name: string;
   description: string;
   details?: string;
   keyPoints?: string[];
+  image: StaticImageData;
 }
 
 export const AccountManagementFeatures: Feature[] = [
@@ -40,6 +63,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Perkuat tingkat keamanan akun dengan menggunakan metode autentikasi 2FA.",
       "Perbaharui kata sandi sewaktu-waktu.",
     ],
+    image: PengaturanKeamanan,
   },
   {
     icon: BellRinging,
@@ -52,6 +76,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Atur jenis pemberitahuan yang diinginkan: Promosi Terbaru, Notifikasi Rekomendasi, hingga Akses Ekslusif.",
       "Tentukan berapa waktu sekali pemberitahuan dikirimkan melalui saluran yang dipilih.",
     ],
+    image: PengaturanPemberitahuan,
   },
   {
     icon: User,
@@ -64,6 +89,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Sesuaikan alamat untuk mendapatkan rekomendasi yang lebih personal.",
       "Fondasi dasar bagaimana kartu membership didesain.",
     ],
+    image: PengaturanProfil,
   },
   {
     icon: Heart,
@@ -76,6 +102,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Kelola koleksi kedai kopi rancangan pribadi dalam tema tertentu.",
       "Bagikan koleksi Anda ke komunitas agar pengguna lain dapat melihat.",
     ],
+    image: WishlistDanKoleksi,
   },
   {
     icon: Gift,
@@ -88,6 +115,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Tukarkan poin dengan hadiah menarik seperti promosi, merchandise, hingga akses eksklusif lainnya.",
       "Tingkatkan status pribadi dengan mengumpulkan poin sebanyak-banyaknya.",
     ],
+    image: PoinDanHadiah,
   },
   {
     icon: DiamondsFour,
@@ -100,6 +128,7 @@ export const AccountManagementFeatures: Feature[] = [
       "Perbaharui dan kelola preferensi kapanpun diperlukan.",
       "Kalibrasi ulang hasil rekomendasi dan kurasi dengan mengatur preferensi.",
     ],
+    image: PengaturanPreferensi,
   },
 ];
 
@@ -115,6 +144,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Pengguna akan menerima notifikasi untuk promosi eksklusif jika mereka mengaktifkan notifikasi promosi.",
       "Promosi yang diutamakan adalah promosi terbaru dari kedai kopi berdasarkan popularitas kedai kopi per-interval.",
     ],
+    image: InformasiPromosi,
   },
   {
     icon: Lightbulb,
@@ -127,6 +157,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Rekomendasi diperbarui secara berkala dan berdasarkan aktivitas pengguna dalam melakukan tindakan.",
       "Hasil rekomendasi tidak terbatas untuk para pengguna eksklusif yang bergabung keanggotaan.",
     ],
+    image: RekomendasiCerdas,
   },
   {
     icon: Stack,
@@ -139,6 +170,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Pengguna dapat mengontrol hasil kurasi lebih akurat melalui filter canggih.",
       "Kurasi dirancang menyesuaikan aktivitas terakhir pengguna untuk hasil yang lebih akurat.",
     ],
+    image: KurasiCerdas,
   },
   {
     icon: MapPin,
@@ -151,6 +183,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Pengguna dapat mencari kedai kopi berdasarkan kategori (misalnya: kopi lokal, kopi internasional) atau filter tambahan.",
       "Visualisasi kedai kopi yang paling cocok dengan preferensi berdasarkan warna titik pada distribusi kedai kopi.",
     ],
+    image: PetaDanNavigasi,
   },
   {
     icon: Compass,
@@ -163,6 +196,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Koleksi yang ditampilkan diutamakan berdasarkan popularitas dan pembaruan terbaru.",
       "Pengguna hanya dapat menambahkan item dari koleksi ini ke wishlist atau koleksi pribadi mereka.",
     ],
+    image: JelajahiKoleksi,
   },
   {
     icon: MagnifyingGlass,
@@ -175,6 +209,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
       "Kata kunci fleksibel yang mendukung bahasa natural dengan bantuan AI.",
       "Hasil tidak terbatas pada kedai kopi tetapi meliputi bacaan artikel, menu, hingga promosi.",
     ],
+    image: PencarianCerdas,
   },
 ];
 
@@ -190,6 +225,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Sistem menghitung skor dalam rentang 0-10 yang menunjukkan seberapa sesuai kedai dengan preferensi pengguna.",
       "Skor ini diperbarui secara otomatis jika pengguna mengubah preferensi atau kedai kopi memperbarui data mereka.",
     ],
+    image: NilaiPencocokanCerdas,
   },
   {
     icon: BookOpenText,
@@ -202,6 +238,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Lengkap meliputi alamat dan navigasi, jam buka perhari, kontak sosial medai, hingga promosi yang tersedia.",
       "Mencakup informasi website resmi, bukan quick links.",
     ],
+    image: InformasiEsensial,
   },
   {
     icon: Layout,
@@ -214,6 +251,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Cari kedai dengan Wi-Fi, ruang kerja, atau area outdoor yang sesuai kebutuhan Anda.",
       "Temukan kedai berdasarkan fasilitas seperti parkir, area anak, atau pet-friendly.",
     ],
+    image: TemaDanFasilitasLengkap,
   },
   {
     icon: Coffee,
@@ -226,6 +264,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Cari menu favorit Anda berdasarkan kategori, seperti kopi spesial, makanan ringan, atau dessert.",
       "Dapatkan saran menu yang sesuai dengan preferensi rasa Anda.",
     ],
+    image: DaftarMenuTerlengkap,
   },
   {
     icon: Image,
@@ -239,6 +278,7 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Nikmati atmosfer kedai secara langsung melalui fitur tur virtual.",
       "Selalu dapatkan tampilan terkini dengan galeri yang terus diperbarui.",
     ],
+    image: GaleriDan360Tour,
   },
   {
     icon: Star,
@@ -251,5 +291,6 @@ export const CoffeeShopInformationFeatures: Feature[] = [
       "Temukan kedai dengan penilaian terbaik berdasarkan kualitas kopi, suasana, dan layanan.",
       "Tulis ulasan Anda sendiri dan bantu kedai favorit Anda dikenal lebih luas.",
     ],
+    image: UlasanKedaiKopi,
   },
 ];
