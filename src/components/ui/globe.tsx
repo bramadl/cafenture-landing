@@ -42,9 +42,8 @@ export default function Globe({
   config?: COBEOptions;
 }) {
   const phi = useRef(0);
-  
-  // let phi = 0;
-  let width = 0;
+  const width = useRef(0);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
@@ -69,17 +68,17 @@ export default function Globe({
     (state: Record<string, any>) => {
       if (!pointerInteracting.current) phi.current += 0.005;
       state.phi = phi.current + r;
-      state.width = width * 2;
-      state.height = width * 2;
+      state.width = width.current * 2;
+      state.height = width.current * 2;
     },
-    [r],
+    [r, width]
   );
 
-  const onResize = () => {
+  const onResize = useCallback(() => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth;
+      width.current = canvasRef.current.offsetWidth;
     }
-  };
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
@@ -87,8 +86,8 @@ export default function Globe({
 
     const globe = createGlobe(canvasRef.current!, {
       ...config,
-      width: width * 2,
-      height: width * 2,
+      width: width.current * 2,
+      height: width.current * 2,
       onRender,
     });
 
@@ -100,17 +99,17 @@ export default function Globe({
     <div
       className={cn(
         "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[600px]",
-        className,
+        className
       )}
     >
       <canvas
         className={cn(
-          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
+          "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
         onPointerDown={(e) =>
           updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current,
+            e.clientX - pointerInteractionMovement.current
           )
         }
         onPointerUp={() => updatePointerInteraction(null)}
