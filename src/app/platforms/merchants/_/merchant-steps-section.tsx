@@ -23,7 +23,12 @@ export const MerchantsStepsSection = () => {
           </div>
           <p className="md:text-center text-secondary font-medium">
             Kunjungi dan Lengkapi Formulir Online{" "}
-            <a className="text-primary" href="#" target="_blank" rel="nofollow">
+            <a
+              className="text-primary"
+              href="https://forms.gle/vKBA8RPiYVrMECwC6"
+              target="_blank"
+              rel="nofollow"
+            >
               Di Sini
             </a>
           </p>

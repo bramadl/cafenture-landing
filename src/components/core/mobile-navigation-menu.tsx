@@ -26,7 +26,8 @@ import {
   UserTermsAndConditionsUrl,
 } from "@cafenture/content/menus";
 
-import { Button } from "../ui/button";
+// import { Button } from "../ui/button";
+import { JoinWaitlist } from "./join-waitlist";
 
 export const MobileNavigationMenu = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -146,10 +147,11 @@ export const MobileNavigationMenu = () => {
           </li>
         </ul>
         <div className="flex items-center gap-4 p-6 border-t">
-          <Button className="flex-1">Buka Aplikasi</Button>
+          <JoinWaitlist />
+          {/* <Button className="flex-1">Buka Aplikasi</Button>
           <Button className="flex-1" variant="outline">
             Daftar Sekarang
-          </Button>
+          </Button> */}
         </div>
       </DrawerContent>
     </Drawer>

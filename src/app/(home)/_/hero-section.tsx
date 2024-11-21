@@ -1,5 +1,6 @@
+import { JoinWaitlist } from "@cafenture/components/core/join-waitlist";
 import { Section } from "@cafenture/components/core/section";
-import { Button } from "@cafenture/components/ui/button";
+// import { Button } from "@cafenture/components/ui/button";
 import { Tag } from "@cafenture/components/ui/tag";
 import { Trophy } from "@phosphor-icons/react/dist/ssr";
 
@@ -28,8 +29,9 @@ export const HeroSection = ({ children }: { children: React.ReactNode }) => {
           dari pengalaman menjelajah hingga rekomendasi personal
         </Section.Caption>
         <div className="flex lg:hidden items-center gap-4 mt-6">
-          <Button>Buka Aplikasi</Button>
-          <Button variant="outline">Daftar Sekarang</Button>
+          <JoinWaitlist />
+          {/* <Button>Buka Aplikasi</Button> */}
+          {/* <Button variant="outline">Daftar Sekarang</Button> */}
         </div>
       </Section.Header>
       {children}

@@ -1,6 +1,7 @@
 import { Section } from "@cafenture/components/core/section";
 import { TwoDevicesMockup } from "@cafenture/components/svg/app-mockups";
-import { Button } from "@cafenture/components/ui/button";
+// import { Button } from "@cafenture/components/ui/button";
+import { JoinWaitlist } from "./join-waitlist";
 
 export const CallToActionSection = () => {
   return (
@@ -24,8 +25,9 @@ export const CallToActionSection = () => {
             </p>
           </header>
           <footer className="flex items-center gap-4">
-            <Button>Buka Aplikasi</Button>
-            <Button variant="outline">Daftar Sekarang</Button>
+            <JoinWaitlist />
+            {/* <Button>Buka Aplikasi</Button> */}
+            {/* <Button variant="outline">Daftar Sekarang</Button> */}
           </footer>
         </section>
       </Section>
