@@ -75,7 +75,7 @@ export const MarketBeams = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[480px] sm:h-[640px] flex items-center justify-center gap-12 md:gap-[100px] lg:gap-[200px] rounded-[64px] bg-slate-50 overflow-hidden"
+      className="relative w-full h-[480px] sm:h-[640px] flex items-center justify-center gap-12 md:gap-[100px] lg:gap-[200px] rounded-[30px] bg-slate-50 overflow-hidden"
     >
       <div className="flex flex-col items-start gap-8">
         {Array(5)
