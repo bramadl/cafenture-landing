@@ -16,8 +16,8 @@ export const MembershipsSection = ({
           Keanggotaan Eksklusif
         </Tag>
         <Section.Title>
-          Keuntungan lebih dari <span className="text-primary">Kedai Kopi</span>{" "}
-          dengan bergabung Membership
+          Keuntungan Lebih yang Diberikan Oleh <span className="text-primary">Kedai Kopi</span>{" "}
+          Dengan Bergabung Membership
         </Section.Title>
         <Section.Caption>
           Dengan hak mendapatkan akses awal, diskon khusus, hingga hadiah

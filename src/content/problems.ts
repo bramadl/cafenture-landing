@@ -7,18 +7,18 @@ export const problems = [
     image: Image01,
     title: "Sulitnya Mendapatkan Rekomendasi Tepat",
     description:
-      "Setiap individu memiliki preferensi unik saat memilih kedai kopi. Namun, berlimpahnya informasi sering kali justru membingungkan, sehingga rekomendasi terasa kurang tepat dan tidak sesuai preferensi pribadi.",
+      "Kami hadir untuk menghasilkan rekomendasi kedai kopi yang menyesuaikan preferensi Anda. Kami mengerti bahwa setiap individu memiliki preferensi unik saat memilih kedai kopi. Sistem kami dirancang untuk menyesuaikan preferensi Anda dari waktu ke waktu.",
   },
   {
     image: Image02,
     title: "Ketidakpastian dalam Memilih Kedai yang Sesuai",
     description:
-      "Informasi detail tentang kedai kopi sering kali sulit ditemukan atau tidak lengkap, dan ulasan yang tersedia terkadang kurang mewakili pengalaman aktual, sementara kualitas kedai dapat berubah dari waktu ke waktu.",
+      "Kami hadir untuk membantu Anda menemukan kedai kopi yang tepat. Kami menyediakan informasi yang lengkap dan up-to-date tentang berbagai kedai kopi, sehingga Anda bisa membuat keputusan yang tepat dalam memilih kedai kopi untuk dikunjungi.",
   },
   {
     image: Image03,
     title: "Keterbatasan Informasi pada Platform Lain",
     description:
-      "Aplikasi pencarian yang ada cenderung menyajikan informasi umum, dengan fitur integrasi yang terbatas. Ini berarti peluang seperti pengumpulan poin loyalitas, informasi promosi, dan algoritma rekomendasi sering terabaikan.",
+      "Kami hadir untuk memberikan informasi dan solusi yang komprehensif, Anda bisa menemukan segala yang Anda butuhkan, mulai dari informasi, fitur-fitur menarik seperti pengumpulan poin, penawaran eksklusif, dan algoritma rekomendasi yang disesuaikan dengan preferensimu.",
   },
 ];

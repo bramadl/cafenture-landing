@@ -16,14 +16,14 @@ export const memberships = {
       icon: Gift,
       title: "Promosi Ekslusif",
       description:
-        "Akses istimewa ke promosi tambahan yang didesain khusus untuk member premium.",
+        "Akses istimewa ke promosi tambahan dirancang khusus untuk member premium.",
     },
 
     {
       icon: Tag,
       title: "Diskon Spesial",
       description:
-        "Diskon spesial yang hanya tersedia bagi member premium. Lebih hemat, lebih untung.",
+        "Diskon spesial yang hanya tersedia untuk member premium: Lebih hemat, lebih untung.",
     },
 
     {

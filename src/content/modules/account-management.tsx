@@ -10,7 +10,7 @@ export const AccountManagementModule: Module = {
     slug: ModuleAccountManagementUrl.url,
     title: (
       <>
-        Kontrol Penuh Terhadap Pencocokan dan Pengalaman Pencarian{" "}
+        Akses Ke Berbagai Fitur Pencocokan dan Pengalaman Pencarian{" "}
         <span className="text-primary">Kedai Kopi</span>
       </>
     ),
