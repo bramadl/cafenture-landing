@@ -5,7 +5,7 @@ import { ModuleCoffeeShopInformationUrl } from "../menus";
 export const CoffeeShopInformationModule: Module = {
   base: {
     description:
-      "Modul Coffee Shop dirancang untuk memberikan pengguna akses mudah ke informasi tentang kedai kopi. Melalui modul ini, pengguna dapat menemukan kedai kopi, membaca dan memberikan ulasan, serta memahami berbagai penilaian mengenai kecocokan kedai tersebut dengan preferensi mereka.",
+      "Modul Coffee Shop dirancang untuk memberikan pengguna akses mudah ke informasi tentang kedai kopi. Melalui modul ini, pengguna dapat menemukan kedai kopi, membaca dan memberikan ulasan, serta memahami berbagai penilaian mengenai kecocokan kedai kopi tersebut dengan preferensi mereka.",
     label: ModuleCoffeeShopInformationUrl.label,
     slug: ModuleCoffeeShopInformationUrl.url,
     title: (

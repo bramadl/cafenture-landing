@@ -10,7 +10,7 @@ export const CoffeeShopDiscoveryModule: Module = {
     slug: ModuleCoffeeShopDiscoveryUrl.url,
     title: (
       <>
-        Jelajahi Ratusan <span className="text-primary">Kedai Kopi</span> yang
+        Jelajahi Ribuan <span className="text-primary">Kedai Kopi</span> yang
         Dikurasi dan Direkomendasi Secara Personal
       </>
     ),
