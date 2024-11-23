@@ -5,8 +5,8 @@ export const JoinWaitlist = () => {
     <Button asChild>
       <a
         href="https://forms.gle/dKyD3e5sLDxWm6dQ7"
-        target="_blank"
         rel="nofollow"
+        target="_blank"
       >
         Gabung Waiting List
       </a>

@@ -21,7 +21,7 @@ const ReviewCard = ({
     <figure className="relative w-64 p-4 rounded-xl bg-slate-50">
       <div className="flex flex-row items-center gap-2">
         <Image
-          alt={username}
+          alt={`Cafenture Indonesia: (Testimoni) ${username}`}
           className="rounded-full"
           height="32"
           src={img}

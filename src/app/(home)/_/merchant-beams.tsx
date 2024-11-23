@@ -38,7 +38,7 @@ const BeamContainer = ({
   size,
   toRef,
 }: {
-  image: StaticImageData;
+  image: StaticImageData & { alt: string };
   baseRef: RefObject<HTMLDivElement>;
   containerRef: RefObject<HTMLDivElement>;
   fromRef: RefObject<HTMLDivElement>;
@@ -64,7 +64,7 @@ const BeamContainer = ({
         )}
       >
         <Image
-          alt={image.src}
+          alt={image.alt}
           blurDataURL={image.blurDataURL}
           className={cn("rounded", size)}
           height={image.height}
@@ -74,7 +74,7 @@ const BeamContainer = ({
       </LogoContainer>
       <LogoContainer ref={fromRef} className={cn("absolute", position)}>
         <Image
-          alt={image.src}
+          alt={image.alt}
           blurDataURL={image.blurDataURL}
           className={cn("rounded", size)}
           height={image.height}
@@ -128,7 +128,10 @@ export const MerchantBeams = () => {
     >
       <div id="left-merchants">
         <BeamContainer
-          image={NineCupsCoffee}
+          image={{
+            ...NineCupsCoffee,
+            alt: "Cafenture Indonesia: (Merchant) Nine Cups Coffee",
+          }}
           baseRef={_merchant1Ref}
           containerRef={containerRef}
           fromRef={merchant1Ref}
@@ -138,7 +141,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={AnomaliCoffee}
+          image={{
+            ...AnomaliCoffee,
+            alt: "Cafenture Indonesia: (Merchant) Anomali Coffee",
+          }}
           baseRef={_merchant2Ref}
           containerRef={containerRef}
           fromRef={merchant2Ref}
@@ -148,7 +154,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={Coteca}
+          image={{
+            ...Coteca,
+            alt: "Cafenture Indonesia: (Merchant) Coteca",
+          }}
           baseRef={_merchant3Ref}
           containerRef={containerRef}
           fromRef={merchant3Ref}
@@ -158,7 +167,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={DancingGoat}
+          image={{
+            ...DancingGoat,
+            alt: "Cafenture Indonesia: (Merchant) Dancing Goat",
+          }}
           baseRef={_merchant4Ref}
           containerRef={containerRef}
           fromRef={merchant4Ref}
@@ -177,7 +189,10 @@ export const MerchantBeams = () => {
 
       <div id="right-merchants">
         <BeamContainer
-          image={DuaMasa}
+          image={{
+            ...DuaMasa,
+            alt: "Cafenture Indonesia: (Merchant) Dua Masa",
+          }}
           baseRef={_merchant5Ref}
           containerRef={containerRef}
           fromRef={merchant5Ref}
@@ -188,7 +203,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={FillmoreCoffee}
+          image={{
+            ...FillmoreCoffee,
+            alt: "Cafenture Indonesia: (Merchant) Fillmore Coffee",
+          }}
           baseRef={_merchant6Ref}
           containerRef={containerRef}
           fromRef={merchant6Ref}
@@ -199,7 +217,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={GutenMorgen}
+          image={{
+            ...GutenMorgen,
+            alt: "Cafenture Indonesia: (Merchant) Guten Morgen",
+          }}
           baseRef={_merchant7Ref}
           containerRef={containerRef}
           fromRef={merchant7Ref}
@@ -210,7 +231,10 @@ export const MerchantBeams = () => {
         />
 
         <BeamContainer
-          image={I15}
+          image={{
+            ...I15,
+            alt: "Cafenture Indonesia: (Merchant) I15 Coffee",
+          }}
           baseRef={_merchant8Ref}
           containerRef={containerRef}
           fromRef={merchant8Ref}

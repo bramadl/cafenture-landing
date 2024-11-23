@@ -1,5 +1,3 @@
-import { Lightning } from "@phosphor-icons/react/dist/ssr";
-
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
@@ -11,13 +9,10 @@ export const FeaturesSection = ({
   return (
     <Section id="features-section">
       <Section.Header>
-        <Tag className="pr-4">
-          <Lightning className="text-secondary" weight="fill" size={20} />
-          Fitur Unggulan
-        </Tag>
+        <Tag>Fitur Unggulan Terdepan</Tag>
         <Section.Title>
-          Dilengkapi Dengan AI yang Menjadikan Pencarian{" "}
-          <span className="text-primary">Kedai Kopi</span> Lebih Personal
+          Dukungan Teknologi Terkini untuk Pencarian{" "}
+          <span className="text-primary">Kedai Kopi</span> yang Lebih Personal
         </Section.Title>
         <Section.Caption>
           Dilengkapi dengan fitur-fitur seperti rekomendasi pintar hingga filter

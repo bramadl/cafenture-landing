@@ -15,14 +15,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Cafenture Indonesia",
-    default: "Platform Rekomendasi Kedai Kopi",
+  metadataBase: new URL(
+    `${process.env.VERCEL_ENV === "local" ? "http" : "https"}://${
+      process.env.VERCEL_PROJECT_PRODUCTION_URL
+    }`
+  ),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
-  description:
-    "Platform pencarian dan rekomendasi personal kedai kopi dilengkapi dengan pengalaman menjelajah yang unik.",
-  alternates: {
-    canonical: process.env.__NEXT_PRIVATE_ORIGIN + "/",
+  title: {
+    default: "Platform Rekomendasi dan Pencarian Kedai Kopi",
+    template: "%s | Cafenture Indonesia",
   },
 };
 

@@ -11,8 +11,11 @@ export const TwoDevicesMockup: FC<
   if (usePNG) {
     return (
       <Image
-        alt="Two Devices Mockup"
-        className={cn("object-contain select-none pointer-events-none", props.className)}
+        alt="Cafenture Indonesia: Platform Pencarian dan Rekomendasi Kedai Kopi"
+        className={cn(
+          "object-contain select-none pointer-events-none",
+          props.className
+        )}
         src={TwoDevicesMockupPNG}
       />
     );
@@ -80,8 +83,11 @@ export const ThreeDevicesMockup: FC<
   if (usePNG) {
     return (
       <Image
-        alt="Two Devices Mockup"
-        className={cn("object-contain select-none pointer-events-none", props.className)}
+        alt="Cafenture Indonesia: Platform Pencarian dan Rekomendasi Kedai Kopi"
+        className={cn(
+          "object-contain select-none pointer-events-none",
+          props.className
+        )}
         src={ThreeDevicesMockupPNG}
       />
     );

@@ -110,7 +110,14 @@ export const WhatsAppContactUrl: MenuUrl = {
 };
 
 export const InstagramUrl: MenuUrl = {
-  url: "#",
+  url: "https://instagram.com/cafenture.indonesia",
+  label: "cafenture.indonesia",
+  description: "",
+  external: true,
+};
+
+export const TiktokUrl: MenuUrl = {
+  url: "https://tiktok.com/cafenture.indonesia",
   label: "cafenture.indonesia",
   description: "",
   external: true,

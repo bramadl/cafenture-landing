@@ -1,5 +1,3 @@
-import { Quotes } from "@phosphor-icons/react/dist/ssr";
-
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
 
@@ -15,12 +13,9 @@ export const TestimonialsSection = ({
     >
       <Section>
         <Section.Header>
-          <Tag className="pr-4">
-            <Quotes className="text-secondary" weight="fill" size={20} />
-            Suara Pengguna
-          </Tag>
+          <Tag>Suara dan Cerita Komunitas</Tag>
           <Section.Title>
-            Pengalaman Tak Ternilai dari Mereka yang Telah Menemukan{" "}
+            Pengalaman Nyata dari Mereka yang Berhasil Menemukan{" "}
             <span className="text-primary">Kedai Kopi</span> Terbaik
           </Section.Title>
           <Section.Caption>

@@ -14,7 +14,8 @@ export const Navigation = () => {
     >
       <nav className="container mx-auto flex items-center justify-between p-6 lg:py-4 sm:px-8 lg:px-16">
         <div className="flex items-center justify-center gap-4">
-          <Link aria-label="Buka Halaman Beranda" href="/">
+          <Link href="/">
+            <span className="sr-only">Beranda</span>
             <Logo className="w-12 h-12" />
           </Link>
         </div>

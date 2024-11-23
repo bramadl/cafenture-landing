@@ -15,6 +15,7 @@ type SectionProps = ForwardRefExoticComponent<
   Title: FC<
     HTMLAttributes<HTMLHeadingElement> & {
       as?: keyof Pick<HTMLElementTagNameMap, "h1" | "h2">;
+      keyword?: string;
     }
   >;
   Caption: FC<HTMLAttributes<HTMLParagraphElement>>;
@@ -52,16 +53,19 @@ Section.Header = function Header({ ...props }) {
   );
 };
 
-Section.Title = function Title({ as = "h2", ...props }) {
+Section.Title = function Title({ as = "h2", keyword, ...props }) {
   const Component = as;
   return (
-    <Component
-      {...props}
-      className={cn(
-        "max-w-[768px] lg:text-center text-2xl sm:text-4xl font-bold leading-normal sm:leading-normal",
-        props.className
-      )}
-    />
+    <div>
+      <Component className="sr-only">{keyword || props.children}</Component>
+      <p
+        {...props}
+        className={cn(
+          "max-w-[768px] lg:text-center text-2xl sm:text-4xl font-bold leading-normal sm:leading-normal",
+          props.className
+        )}
+      />
+    </div>
   );
 };
 

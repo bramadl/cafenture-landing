@@ -1,9 +1,6 @@
-import { Question } from "@phosphor-icons/react/dist/ssr";
-
+import { FaqAccordion } from "@cafenture/app/_/faq-accordion";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
-
-import { FaqAccordion } from "../../_/faq-accordion";
 import { getFeaturedFaqs } from "@cafenture/content/remotes/faqs";
 
 export const FaqSection = async () => {
@@ -12,12 +9,9 @@ export const FaqSection = async () => {
   return (
     <Section id="faq-section">
       <Section.Header>
-        <Tag className="pr-4">
-          <Question className="text-secondary" weight="fill" size={20} />
-          Pertanyaan Umum
-        </Tag>
+        <Tag>Pertanyaan Umum Tentang Platform</Tag>
         <Section.Title>
-          Pertanyaan Seputar Platform Rekomendasi{" "}
+          Jawaban Seputar Platform Rekomendasi{" "}
           <span className="text-primary">Kedai Kopi</span> yang Kami Rancang
         </Section.Title>
         <Section.Caption>

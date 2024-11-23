@@ -2,6 +2,7 @@ import {
   ArrowUpRight,
   EnvelopeSimple,
   InstagramLogo,
+  TiktokLogo,
   WhatsappLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
@@ -17,6 +18,7 @@ import {
   ModuleAccountManagementUrl,
   ModuleCoffeeShopDiscoveryUrl,
   ModuleCoffeeShopInformationUrl,
+  TiktokUrl,
   UserPrivacyAndPoliciesUrl,
   UserQuestionsUrl,
   UserTermsAndConditionsUrl,
@@ -84,6 +86,7 @@ export const FooterMenu = () => {
               <Link
                 className="inline-flex items-center gap-2 text-secondary hover:text-black transition"
                 href={WhatsAppContactUrl.url}
+                rel="nofollow"
                 target="_blank"
               >
                 <WhatsappLogo className="size-5" />
@@ -94,6 +97,7 @@ export const FooterMenu = () => {
               <Link
                 className="inline-flex items-center gap-2 text-secondary hover:text-black transition"
                 href={EmailContactUrl.url}
+                rel="nofollow"
                 target="_blank"
               >
                 <EnvelopeSimple className="size-5" />
@@ -104,10 +108,22 @@ export const FooterMenu = () => {
               <Link
                 className="inline-flex items-center gap-2 text-secondary hover:text-black transition"
                 href={InstagramUrl.url}
+                rel="nofollow"
                 target="_blank"
               >
                 <InstagramLogo className="size-5" />
                 {InstagramUrl.label}
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="inline-flex items-center gap-2 text-secondary hover:text-black transition"
+                href={TiktokUrl.url}
+                rel="nofollow"
+                target="_blank"
+              >
+                <TiktokLogo className="size-5" />
+                {TiktokUrl.label}
               </Link>
             </li>
           </ul>
