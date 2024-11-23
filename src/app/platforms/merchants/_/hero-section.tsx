@@ -7,13 +7,14 @@ export const HeroSection = ({ children }: { children: React.ReactNode }) => {
       <Section.Header className="md:flex-1 pt-20 sm:pt-24">
         <Tag>Tentang Kemitraan Cafenture</Tag>
         <Section.Title as="h1">
-          Gabung Bersama Cafenture untuk Menginspirasi Pecinta{" "}
-          <span className="text-primary">Kedai Kopi</span>
+          Perluas Jangkauan Pemasaran Bisnis{" "}
+          <span className="text-primary">Kedai Kopi</span> Anda Bersama
+          Cafenture Indonesia
         </Section.Title>
         <Section.Caption>
-          Bersama kami, jadikan kedai kopi Anda lebih dari sekadar tempat minum
-          kopi. Tingkatkan eksposur, bangun loyalitas pelanggan, dan jadikan
-          kedai Anda destinasi favorit para pecinta kopi.
+          Jadikan kedai kopi Anda lebih dari sekedar tempat minum kopi.
+          Tingkatkan eksposur, bangun loyalitas pelanggan, dan jadikan kedai
+          Anda destinasi favorit para pencari kedai kopi di Indonesia.
         </Section.Caption>
       </Section.Header>
       {children}

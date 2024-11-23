@@ -2,6 +2,7 @@ import { type Metadata } from "next";
 import { type WebPage } from "schema-dts";
 
 import { WithLd } from "@cafenture/components/core/with-ld";
+import { baseLd, baseUrl } from "@cafenture/lib/seo";
 
 import { FaqSection } from "./_/faq-section";
 import { FeaturesBento } from "./_/features-bento";
@@ -17,57 +18,24 @@ import { TestimonialsSection } from "./_/testimonials-section";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: `${process.env.VERCEL_ENV === "local" ? "http" : "https"}://${
-      process.env.VERCEL_PROJECT_PRODUCTION_URL
-    }/`,
+    canonical: `${baseUrl}/`,
   },
   description:
-    "Cafenture Indonesia adalah platform rekomendasi dan pencarian kedai kopi terbaik di Indonesia dengan dukungan teknologi terkini.",
+    "Cafenture Indonesia adalah platform rekomendasi dan pencarian kedai kopi terbaik di Indonesia yang dirancang penuh menggunakan dukungan teknologi terkini.",
   title: "Platform Rekomendasi dan Pencarian Kedai Kopi",
 };
 
 export default function Page() {
   return (
     <WithLd<WebPage>
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "WebPage",
+      jsonLd={({ baseUrl }) => ({
+        ...baseLd,
         name: "Platform Rekomendasi dan Pencarian Kedai Kopi | Cafenture Indonesia",
         description:
-          "Cafenture Indonesia adalah platform rekomendasi dan pencarian kedai kopi terbaik di Indonesia dengan dukungan teknologi terkini.",
-        publisher: {
-          "@type": "Organization",
-          name: "PT ABV Digital Indonesia",
-        },
-        image: {
-          "@type": "ImageObject",
-          url: `${process.env.VERCEL_ENV === "local" ? "http" : "https"}://${
-            process.env.VERCEL_PROJECT_PRODUCTION_URL
-          }/logos/alpha-dark.png`,
-          height: "630",
-          width: "1200",
-        },
-        mainEntityOfPage: `${
-          process.env.VERCEL_ENV === "local" ? "http" : "https"
-        }://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
-        url: `${process.env.VERCEL_ENV === "local" ? "http" : "https"}://${
-          process.env.VERCEL_PROJECT_PRODUCTION_URL
-        }`,
-        keywords: [
-          "Cafenture Indonesia",
-          "Rekomendasi Kedai Kopi",
-          "Pencarian Kedai Kopi",
-          "Platform Rekomendasi Kedai Kopi",
-          "Platform Pencarian Kedai Kopi",
-          "Keanggotaan Eksklusif untuk Pencari Kedai Kopi",
-          "Informasi Kedai Kopi Terlengkap",
-          "Rekomendasi dengan Dukungan Teknologi Terkini",
-        ],
-        sameAs: [
-          "https://www.instagram.com/cafenture.indonesia",
-          "https://www.tiktok.com/cafenture.indonesia",
-        ],
-      }}
+          "Cafenture Indonesia adalah platform rekomendasi dan pencarian kedai kopi terbaik di Indonesia yang dirancang penuh menggunakan dukungan teknologi terkini.",
+        mainEntityOfPage: `${baseUrl}`,
+        url: `${baseUrl}`,
+      })}
     >
       <HeroSection>
         <ProductMockups />

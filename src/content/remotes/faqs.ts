@@ -7,6 +7,7 @@ export interface IFaqCategory {
 export interface IFaqQuestion {
   answer: {
     html: string;
+    text: string;
   };
   category: IFaqCategory;
   question: string;
@@ -25,6 +26,7 @@ export async function getFeaturedFaqs() {
           question
           answer {
             html
+            text
           }
         }
       }`,
@@ -73,6 +75,7 @@ export async function getFaqQuestions() {
           question
           answer {
             html
+            text
           }
         }
       }`,
@@ -80,9 +83,7 @@ export async function getFaqQuestions() {
   });
 
   const json = await response.json();
-  const groupedFAQs = groupFAQsByCategory(json.data.faqQuestions);
-
-  return groupedFAQs;
+  return json.data.faqQuestions as IFaqQuestion[];
 }
 
 interface FAQ {
@@ -94,6 +95,7 @@ interface FAQ {
   question: string;
   answer: {
     html: string;
+    text: string;
   };
 }
 
@@ -104,12 +106,12 @@ interface GroupedFAQs {
     hash: string;
     faqs: Array<{
       question: string;
-      answer: { html: string };
+      answer: { html: string; text: string };
     }>;
   };
 }
 
-function groupFAQsByCategory(faqQuestions: FAQ[]): GroupedFAQs {
+export function groupFAQsByCategory(faqQuestions: FAQ[]): GroupedFAQs {
   return faqQuestions.reduce((acc, faq) => {
     const { context, description, hash } = faq.category;
 

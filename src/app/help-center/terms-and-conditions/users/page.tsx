@@ -1,3 +1,6 @@
+import { type Metadata } from "next";
+import { type WebPage } from "schema-dts";
+
 import { Blog } from "@cafenture/components/core/blog";
 import {
   Breadcrumb,
@@ -9,13 +12,63 @@ import {
 } from "@cafenture/components/ui/breadcrumb";
 import { HomeUrl, UserTermsAndConditionsUrl } from "@cafenture/content/menus";
 import { Section } from "@cafenture/components/core/section";
+import { WithLd } from "@cafenture/components/core/with-ld";
+import { baseLd, baseUrl } from "@cafenture/lib/seo";
 import { getTermsAndCondition } from "@cafenture/content/remotes/terms-and-conditions";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${baseUrl}/help-center/terms-and-conditions/users`,
+  },
+  description:
+    "Sebagai pengguna platform, pastikan Anda memahami hak dan kewajiban Anda saat menggunakan layanan kami.",
+  title: "Syarat dan Ketentuan: Pengguna Platform",
+};
 
 export default async function Page() {
   const { content } = await getTermsAndCondition("forUsers");
 
   return (
-    <main className="pt-[100px]">
+    <WithLd<WebPage>
+      className="pt-[100px]"
+      jsonLd={({ baseUrl }) => ({
+        ...baseLd,
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Beranda",
+              item: `${baseUrl}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Pusat Dukungan",
+              item: `${baseUrl}/help-center`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Syarat dan Ketentuan",
+              item: `${baseUrl}/help-center/terms-and-conditions`,
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "Syarat dan Ketentuan: Pengguna",
+              item: `${baseUrl}/help-center/terms-and-conditions/users`,
+            },
+          ],
+        },
+        name: "Syarat dan Ketentuan: Pengguna Platform | Cafenture Indonesia",
+        description:
+          "Sebagai pengguna platform, pastikan Anda memahami hak dan kewajiban Anda saat menggunakan layanan kami.",
+        mainEntityOfPage: `${baseUrl}/help-center/terms-and-conditions/users`,
+        url: `${baseUrl}/help-center/terms-and-conditions/users`,
+      })}
+    >
       <Section id="article" className="gap-0 sm:gap-0 xl:max-w-[768px] mx-auto">
         <Breadcrumb className="mb-10">
           <BreadcrumbList>
@@ -38,6 +91,6 @@ export default async function Page() {
         </Breadcrumb>
         <Blog>{content.html}</Blog>
       </Section>
-    </main>
+    </WithLd>
   );
 }

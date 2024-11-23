@@ -5,7 +5,7 @@ export const HeroSection = ({ children }: { children: React.ReactNode }) => {
   return (
     <Section id="hero-section" className="pt-[100px]">
       <Section.Header className="md:flex-1 pt-20 sm:pt-24 mx-0 lg:items-start">
-        <Tag>Keanggotaan Ekslusif</Tag>
+        <Tag>Mengenal Keanggotaan Ekslusif</Tag>
         <Section.Title as="h1" className="lg:text-left">
           Keistimewaan Sebagai Anggota Eksklusif{" "}
           <span className="text-primary">Cafenture Indonesia</span>

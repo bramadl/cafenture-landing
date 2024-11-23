@@ -15,11 +15,6 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    `${process.env.VERCEL_ENV === "local" ? "http" : "https"}://${
-      process.env.VERCEL_PROJECT_PRODUCTION_URL
-    }`
-  ),
   robots: {
     index: true,
     follow: true,

@@ -7,10 +7,11 @@ export const ReachabilitySection = () => {
   return (
     <Section id="reachability-section">
       <Section.Header>
-        <Tag className="pr-4">Dukungan Jangkauan Platform</Tag>
+        <Tag className="pr-4">Dukungan dan Jangkauan Platform</Tag>
         <Section.Title>
-          Saat Ini, Cafenture Indonesia Telah Menjangkau{" "}
-          <span className="text-primary">Kedai Kopi</span> se-Jabodetabek
+          Menjangkau lebih banyak{" "}
+          <span className="text-primary">Kedai Kopi</span> dan Pencinta Kopi di
+          Seluruh Indonesia
         </Section.Title>
         <Section.Caption>
           Kami berkomitmen untuk terus memperluas cakupan layanan serta mitra

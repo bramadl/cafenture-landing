@@ -1,20 +1,23 @@
 import { type Metadata } from "next";
+import { type WebPage } from "schema-dts";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 import { Article } from "@cafenture/components/core/article";
 import { Dots } from "@cafenture/components/svg/background/dots";
 import { Section } from "@cafenture/components/core/section";
 import { Tag } from "@cafenture/components/ui/tag";
-import { modules } from "@cafenture/content/modules/modules";
+import { WithLd } from "@cafenture/components/core/with-ld";
+import { baseLd } from "@cafenture/lib/seo";
 import { cn } from "@cafenture/lib/utils";
-import Image from "next/image";
+import { modules } from "@cafenture/content/modules/modules";
 
 export const generateMetadata = async ({
   params,
 }: PageProps<Promise<{ module: string }>>): Promise<Metadata> => {
   const moduleFromParams = (await params).module;
   const appModule = modules.find(
-    (m) => m.base.slug === `/modules/${moduleFromParams}`
+    (m) => m.base.slug === `/platforms/modules/${moduleFromParams}`
   );
 
   if (!appModule) throw new Error("No module can be found!");
@@ -37,21 +40,65 @@ export default async function Page({
 }: PageProps<Promise<{ module: string }>>) {
   const moduleFromParams = (await params).module;
   const appModule = modules.find(
-    (module) => module.base.slug === `/modules/${moduleFromParams}`
+    (module) => module.base.slug === `/platforms/modules/${moduleFromParams}`
   );
 
   if (!appModule) return notFound();
   const {
-    base: { description, label, title },
+    base: { description, label, slug, title },
     features,
+    seo,
   } = appModule;
 
   return (
-    <main>
+    <WithLd<WebPage>
+      jsonLd={({ baseUrl }) => ({
+        ...baseLd,
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Beranda",
+              item: `${baseUrl}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Tentang Platform",
+              item: `${baseUrl}/platforms`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: `${label} Module`,
+              item: `${baseUrl}/platforms/modules/${module}`,
+            },
+          ],
+        },
+        name: seo.title,
+        description: seo.description,
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Fitur Cafenture",
+          itemListOrder: "http://schema.org/ItemListOrderAscending",
+          itemListElement: features.map((feature, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: feature.name,
+            description: feature.description,
+          })),
+        },
+        url: `${baseUrl}/platforms/modules/${slug}`,
+      })}
+    >
       <Section id="module-section" className="pt-[100px]">
         <Section.Header className="md:flex-1 pt-20 sm:pt-24 mx-0 lg:items-start">
-          <Tag>{label}</Tag>
-          <Section.Title as="h1" className="lg:text-left">
+          <Tag>
+            <h1>{label}</h1>
+          </Tag>
+          <Section.Title as="h2" className="lg:text-left">
             {title}
           </Section.Title>
           <Section.Caption className="lg:text-left">
@@ -87,7 +134,7 @@ export default async function Page({
                 >
                   {image && (
                     <Image
-                      alt={name}
+                      alt={`Cafenture Indonesia: (${label}) ${name}`}
                       blurDataURL={image.blurDataURL}
                       className="w-full h-full object-contain"
                       height={image.height}
@@ -102,6 +149,6 @@ export default async function Page({
           )}
         </ul>
       </Section>
-    </main>
+    </WithLd>
   );
 }

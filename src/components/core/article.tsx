@@ -7,9 +7,10 @@ export const Article: FC<
   HTMLAttributes<HTMLHeadingElement> & {
     description: string;
     details?: string[];
+    skipTitle?: boolean;
     title: string;
   }
-> = ({ description, details, title, ...props }) => {
+> = ({ description, details, skipTitle = false, title, ...props }) => {
   return (
     <article
       {...props}
@@ -17,7 +18,13 @@ export const Article: FC<
     >
       <header className="flex flex-col gap-3">
         {props.children}
-        <Title>{title}</Title>
+        {skipTitle ? (
+          <p className="group-hover:text-primary transition-colors text-lg sm:text-xl font-semibold max-w-[80%] md:max-w-[90%] lg:max-w-[75%] xl:max-w-none">
+            {title}
+          </p>
+        ) : (
+          <Title>{title}</Title>
+        )}
       </header>
       <Description>{description}</Description>
       {details && (

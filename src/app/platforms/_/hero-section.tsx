@@ -5,8 +5,8 @@ export const HeroSection = ({ children }: { children: React.ReactNode }) => {
   return (
     <Section id="hero-section" className="pt-[100px]">
       <Section.Header className="md:flex-1 pt-20 sm:pt-24">
-        <Tag>Platform Digital Terdepan</Tag>
-        <Section.Title as="h1">
+        <Tag>Fondasi Dasar Cafenture Indonesia</Tag>
+        <Section.Title as="h1" keyword="Fondasi Dasar Cafenture Indonesia">
           Cafenture Menghubungkan Pencari dengan{" "}
           <span className="text-primary">Kedai Kopi</span> Terbaik di Indonesia
         </Section.Title>

@@ -48,7 +48,7 @@ Spotlight.Tags = function Tags({ tags = ["Tag 1", "Tag 2"], ...props }) {
 
 Spotlight.Title = function Title({ url, ...props }) {
   return (
-    <h2
+    <h3
       {...props}
       className={cn(
         "text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors",
@@ -58,7 +58,7 @@ Spotlight.Title = function Title({ url, ...props }) {
       <Link className="after:absolute after:inset-0" href={url} scroll>
         {props.children}
       </Link>
-    </h2>
+    </h3>
   );
 };
 
@@ -108,7 +108,7 @@ Spotlight.Thumbnail = function Thumbnail({
       )}
     >
       <Image
-        alt={fileName}
+        alt={`Cafenture Indonesia: (Spotlight) ${fileName}`}
         className="w-full h-full object-cover object-center select-none pointer-events-none"
         height={height}
         src={url}

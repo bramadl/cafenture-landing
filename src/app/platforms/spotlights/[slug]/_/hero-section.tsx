@@ -27,10 +27,10 @@ export const HeroSection = ({
   return (
     <Section
       id="hero-section"
-      className="relative pt-[100px] xl:flex-row min-h-screen"
+      className="relative pt-[100px] xl:flex-row xl:min-h-screen"
     >
-      <Section.Header className="md:flex-1 pt-20 sm:pt-24 mx-0 lg:items-start">
-        <Breadcrumb className="mb-10">
+      <Section.Header className="xl:flex-1 pt-20 sm:pt-24 mx-0 lg:items-start">
+        <Breadcrumb className="xl:-mt-64 mb-10">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href={HomeUrl.url}>
@@ -55,9 +55,9 @@ export const HeroSection = ({
         </Section.Title>
         <Section.Caption className="lg:text-left">{caption}</Section.Caption>
       </Section.Header>
-      <figure className="flex-1 overflow-hidden bg-slate-200">
+      <figure className="xl:flex-1 aspect-video overflow-hidden bg-slate-200">
         <Image
-          alt={fileName}
+          alt={`Cafenture Indonesia: (Spotlight) ${fileName}`}
           className="w-full h-full object-cover pointer-events-none select-none"
           height={height}
           src={url}

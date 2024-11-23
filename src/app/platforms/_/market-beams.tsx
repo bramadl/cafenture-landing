@@ -48,7 +48,9 @@ const UserBeams: FC<UserBeamsProps> = ({ containerRef, mainRef }) => {
 };
 
 interface MerchantBeamsProps extends UserBeamsProps {
-  image: StaticImageData;
+  image: StaticImageData & {
+    alt: string;
+  };
 }
 
 const MerchantBeams: FC<MerchantBeamsProps> = ({
@@ -66,7 +68,7 @@ const MerchantBeams: FC<MerchantBeamsProps> = ({
       />
       <LogoContainer ref={merchantRef}>
         <Image
-          alt={image.src}
+          alt={image.alt}
           blurDataURL={image.blurDataURL}
           className={cn("rounded size-14")}
           height={image.height}
@@ -102,16 +104,35 @@ export const MarketBeams = () => {
         <Logo className="size-16 sm:size-[150px]" type="light" />
       </LogoContainer>
       <div className="flex flex-col items-start gap-8">
-        {[KiraKiraKopi, KopiDeo, KopiKohlie, KopiPraja, KopiWangsa].map(
-          (logo, key) => (
-            <MerchantBeams
-              key={key}
-              image={logo}
-              containerRef={containerRef}
-              mainRef={mainRef}
-            />
-          )
-        )}
+        {[
+          {
+            ...KiraKiraKopi,
+            alt: "Cafenture Indonesia: (Merchant) Kira Kira Kopi",
+          },
+          {
+            ...KopiDeo,
+            alt: "Cafenture Indonesia: (Merchant) Kopi Deo",
+          },
+          {
+            ...KopiKohlie,
+            alt: "Cafenture Indonesia: (Merchant) Kopi Kohlie",
+          },
+          {
+            ...KopiPraja,
+            alt: "Cafenture Indonesia: (Merchant) Kopi Praja",
+          },
+          {
+            ...KopiWangsa,
+            alt: "Cafenture Indonesia: (Merchant) Kopi Wangsa",
+          },
+        ].map((logo, key) => (
+          <MerchantBeams
+            key={key}
+            image={logo}
+            containerRef={containerRef}
+            mainRef={mainRef}
+          />
+        ))}
       </div>
     </div>
   );

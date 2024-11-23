@@ -24,25 +24,82 @@ import Tieambi from "@cafenture/content/assets/merchants/logos/tieambi.png";
 import TokoKopiMaru from "@cafenture/content/assets/merchants/logos/toko-kopi-maru.png";
 
 const merchants = [
-  AnomaliCoffee,
-  Coteca,
-  DancingGoat,
-  NineCupsCoffee,
-  DuaMasa,
-  FillmoreCoffee,
-  GutenMorgen,
-  I15,
-  KiraKiraKopi,
-  KopiDeo,
-  KopiKohlie,
-  KopiPraja,
-  KopiWangsa,
-  Kopilot,
-  Kopiluvium,
-  RelativeCoffee,
-  RelungKopi,
-  Tieambi,
-  TokoKopiMaru,
+  {
+    ...AnomaliCoffee,
+    alt: "Anomali Coffee",
+  },
+  {
+    ...Coteca,
+    alt: "Coteca",
+  },
+  {
+    ...DancingGoat,
+    alt: "Dancing Goat",
+  },
+  {
+    ...NineCupsCoffee,
+    alt: "Nine Cups Coffee",
+  },
+  {
+    ...DuaMasa,
+    alt: "Dua Masa",
+  },
+  {
+    ...FillmoreCoffee,
+    alt: "Fillmore Coffee",
+  },
+  {
+    ...GutenMorgen,
+    alt: "Guten Morgen",
+  },
+  {
+    ...I15,
+    alt: "I15 Coffee",
+  },
+  {
+    ...KiraKiraKopi,
+    alt: "Kira Kira Kopi",
+  },
+  {
+    ...KopiDeo,
+    alt: "Kopi Deo",
+  },
+  {
+    ...KopiKohlie,
+    alt: "Kopi Kohlie",
+  },
+  {
+    ...KopiPraja,
+    alt: "Kopi Praja",
+  },
+  {
+    ...KopiWangsa,
+    alt: "Kopi Wangsa",
+  },
+  {
+    ...Kopilot,
+    alt: "Kopilot",
+  },
+  {
+    ...Kopiluvium,
+    alt: "Kopiluvium",
+  },
+  {
+    ...RelativeCoffee,
+    alt: "Relative Coffee",
+  },
+  {
+    ...RelungKopi,
+    alt: "Relung Kopi",
+  },
+  {
+    ...Tieambi,
+    alt: "Tieambi",
+  },
+  {
+    ...TokoKopiMaru,
+    alt: "Toko Kopi Maru",
+  },
 ];
 
 const firstRow = merchants.slice(0, merchants.length / 2);
@@ -51,16 +108,15 @@ const secondRow = merchants.slice(merchants.length / 2);
 export const MerchantsMarquee = () => {
   return (
     <div>
-      <h2 className="text-secondary text-center md:text-xl mb-16">
-        Dipercayai ratusan mitra lainnya untuk meningkatkan eksposur bisnis
-        Kedai Kopi
-      </h2>
+      <p className="text-secondary text-center md:text-xl mb-16">
+        Dipercayai ratusan mitra lainnya dalam meningkatkan eksposur bisnis
+      </p>
       <div className="relative w-full flex flex-col items-center justify-center gap-12 overflow-hidden">
         <Marquee className="[--duration:20s]">
           {firstRow.map((image, key) => (
             <Image
               key={key}
-              alt={image.src}
+              alt={`Cafenture Indonesia: (Merchant) ${image.alt}`}
               blurDataURL={image.blurDataURL}
               className={cn("rounded size-10")}
               height={image.height}
@@ -73,7 +129,7 @@ export const MerchantsMarquee = () => {
           {secondRow.map((image, key) => (
             <Image
               key={key}
-              alt={image.src}
+              alt={`Cafenture Indonesia: (Merchant) ${image.alt}`}
               blurDataURL={image.blurDataURL}
               className={cn("rounded size-10")}
               height={image.height}

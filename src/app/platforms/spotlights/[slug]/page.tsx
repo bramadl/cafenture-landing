@@ -1,16 +1,18 @@
+import { type BlogPosting } from "schema-dts";
 import { type Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { Blog } from "@cafenture/components/core/blog";
 import { PinnedSection } from "@cafenture/components/core/pinned-section";
 import { Separator } from "@cafenture/components/ui/separator";
+import { WithLd } from "@cafenture/components/core/with-ld";
+import { getSpotlight } from "@cafenture/content/remotes/spotlights";
 
 import { ArticleSection } from "./_/article-section";
 import { HeroSection } from "./_/hero-section";
 import { MoreSpotlightsSection } from "./_/more-spotlights-section";
 import { SocialSharing } from "./_/spotlight-article/social-sharing";
 import { TableOfContent } from "./_/spotlight-article/table-of-content";
-import { getSpotlight } from "@cafenture/content/remotes/spotlights";
-import { notFound } from "next/navigation";
 
 export const generateMetadata = async ({
   params,
@@ -43,7 +45,10 @@ export default async function Page({
   const {
     caption,
     content,
+    createdBy,
+    publishedAt,
     relatedSpotlights,
+    slug: url,
     tableOfContent,
     tags,
     thumbnail,
@@ -51,7 +56,57 @@ export default async function Page({
   } = spotlight;
 
   return (
-    <main>
+    <WithLd<BlogPosting>
+      jsonLd={({ baseUrl }) => ({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Beranda",
+              item: `${baseUrl}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Tentang Platform",
+              item: `${baseUrl}/platforms`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Cafenture Spotlights",
+              item: `${baseUrl}/platforms/spotlights`,
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: `Cafenture Spotlights: ${title}`,
+              item: `${baseUrl}/platforms/spotlights/${url}`,
+            },
+          ],
+        },
+        headline: title,
+        description: caption,
+        image: `${thumbnail.url}`,
+        author: {
+          "@type": "Person",
+          name: createdBy.name,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "PT ABV Digital Indonesia",
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${baseUrl}/platforms/spotlight/${url}`,
+        },
+        ...(publishedAt && { datePublished: publishedAt.toISOString() }),
+      })}
+    >
       <HeroSection
         caption={caption}
         thumbnail={thumbnail}
@@ -80,6 +135,6 @@ export default async function Page({
       {relatedSpotlights && (
         <MoreSpotlightsSection spotlights={relatedSpotlights} />
       )}
-    </main>
+    </WithLd>
   );
 }

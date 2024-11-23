@@ -20,7 +20,7 @@ export const HomeUrl: MenuUrl = {
 };
 
 export const CafentureStoryUrl: MenuUrl = {
-  url: "/stories",
+  url: "/platforms",
   label: "Mengenal Cafenture",
   description:
     "Pelajari misi, visi, dan bagaimana kami merancang platform kami.",
@@ -55,20 +55,20 @@ export const CafentureMembershipUrl: MenuUrl = {
 };
 
 export const ModuleAccountManagementUrl: MenuUrl = {
-  url: "/modules/account-management",
+  url: "/platforms/modules/account-management",
   label: "Account Management",
   description:
     "Modul pengelolaan akun yang mengontrol personalisasi dan rekomendasi.",
 };
 
 export const ModuleCoffeeShopDiscoveryUrl: MenuUrl = {
-  url: "/modules/coffee-shop-discovery",
+  url: "/platforms/modules/coffee-shop-discovery",
   label: "Coffee Shop Discovery",
   description: "Modul penjelajahan kedai kopi yang didukung teknologi terkini.",
 };
 
 export const ModuleCoffeeShopInformationUrl: MenuUrl = {
-  url: "/modules/coffee-shop-information",
+  url: "/platforms/modules/coffee-shop-information",
   label: "Coffee Shop Information",
   description:
     "Modul informasi kedai kopi yang memiliki data dan informasi terlengkap.",

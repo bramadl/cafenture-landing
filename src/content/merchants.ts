@@ -12,7 +12,7 @@ export const merchants = {
       details: [
         "Perluas jangkauan bisnis Anda ke komunitas pencinta kopi.",
         "Tampilkan kedai Anda di antara rekomendasi utama platform.",
-        "Raih eksposur lebih melalui fitur khusus merchant.",
+        "Raih eksposur lebih melalui fitur yang menjangkau lebih banyak pelanggan.",
       ],
       image: Image01,
     },

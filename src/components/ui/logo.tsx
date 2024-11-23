@@ -30,7 +30,7 @@ const AlphaDark = ({
   if (usePNG) {
     return (
       <Image
-        alt="Logo Dark"
+        alt="Cafenture Indonesia: Logo Dark"
         className={className}
         src="/logos/alpha-dark.png"
         height={100}
@@ -336,7 +336,7 @@ const AlphaLight = ({
   if (usePNG) {
     return (
       <Image
-        alt="Logo Light"
+        alt="Cafenture Indonesia: Logo Light"
         className={className}
         src="/logos/alpha-light.png"
         height={100}

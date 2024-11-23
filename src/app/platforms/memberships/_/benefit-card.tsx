@@ -89,6 +89,7 @@ export const BenefitCard: FC<BenefitCardProps> = ({
           <Article
             className="md:hidden flex-1"
             description={description}
+            skipTitle
             title={title}
           />
         </div>

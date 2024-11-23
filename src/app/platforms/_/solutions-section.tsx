@@ -9,10 +9,11 @@ export const SolutionsSection = ({
   return (
     <Section id="solutions-section">
       <Section.Header className="mx-0 lg:items-start">
-        <Tag className="pr-4">Perancangan Dibalik Platform</Tag>
+        <Tag className="pr-4">Nilai Utama Perancangan Sistem</Tag>
         <Section.Title className="lg:text-left">
-          Rekomendasi <span className="text-primary">Kedai Kopi</span> Tepat
-          Sasaran, Informasi Lengkap, dan Fitur yang Relevan
+          Mengembangkan Sistem Rekomendasi{" "}
+          <span className="text-primary">Kedai Kopi</span> Tepat Sasaran dan
+          Relevan
         </Section.Title>
         <Section.Caption className="lg:text-left">
           Melalui Cafenture, kami menawarkan lebih dari sekadar daftar kedai

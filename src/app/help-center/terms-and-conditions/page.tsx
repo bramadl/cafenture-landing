@@ -1,3 +1,4 @@
+import { type Metadata } from "next";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { Fragment } from "react";
 import Link from "next/link";
@@ -5,13 +6,57 @@ import Link from "next/link";
 import { Blog } from "@cafenture/components/core/blog";
 import { PinnedSection } from "@cafenture/components/core/pinned-section";
 import { Section } from "@cafenture/components/core/section";
+import { baseLd, baseUrl } from "@cafenture/lib/seo";
 
 import { HelpCenterSubMenu } from "../_/help-center-submenu";
 import { HeroSection } from "../_/hero-section";
+import { WithLd } from "@cafenture/components/core/with-ld";
+import { WebPage } from "schema-dts";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: `${baseUrl}/help-center/terms-and-conditions`,
+  },
+  description:
+    "Halaman ini menjelaskan syarat dan ketentuan penggunaan platform termasuk panduan penggunaan, hak dan kewajiban pengguna, serta kebijakan yang berlaku.",
+  title: "Syarat dan Ketentuan Penggunaan Platform",
+};
 
 export default function Page() {
   return (
-    <main>
+    <WithLd<WebPage>
+      jsonLd={({ baseUrl }) => ({
+        ...baseLd,
+        breadcrumb: {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Beranda",
+              item: `${baseUrl}`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Pusat Dukungan",
+              item: `${baseUrl}/help-center`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Syarat dan Ketentuan",
+              item: `${baseUrl}/help-center/terms-and-conditions`,
+            },
+          ],
+        },
+        name: "Syarat dan Ketentuan Penggunaan Platform | Cafenture Indonesia",
+        description:
+          "Halaman ini menjelaskan syarat dan ketentuan penggunaan platform termasuk panduan penggunaan, hak dan kewajiban pengguna, serta kebijakan yang berlaku.",
+        mainEntityOfPage: `${baseUrl}/help-center/terms-and-conditions`,
+        url: `${baseUrl}/help-center/terms-and-conditions`,
+      })}
+    >
       <HeroSection
         label="Syarat dan Ketentuan"
         description="Pelajari syarat dan ketentuan penggunaan platform kami, termasuk panduan penggunaan, hak dan kewajiban pengguna, serta kebijakan yang berlaku."
@@ -34,7 +79,10 @@ export default function Page() {
             ]}
           />
         </PinnedSection>
-        <Blog className="xl:first:mt-0 mt-12 lg:mt-16 xl:mt-0" useMarkUp={false}>
+        <Blog
+          className="xl:first:mt-0 mt-12 lg:mt-16 xl:mt-0"
+          useMarkUp={false}
+        >
           <Fragment>
             <p>
               <strong>PT. ABV Digital Indonesia</strong> selaku pemilik aplikasi{" "}
@@ -85,6 +133,6 @@ export default function Page() {
           </Fragment>
         </Blog>
       </Section>
-    </main>
+    </WithLd>
   );
 }
