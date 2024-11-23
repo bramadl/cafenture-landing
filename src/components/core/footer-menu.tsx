@@ -9,7 +9,7 @@ import Link from "next/link";
 import {
   CafentureMembershipUrl,
   CafentureMerchantUrl,
-  CafenturePlatformUrl,
+  // CafenturePlatformUrl,
   CafentureSpotlightsUrl,
   CafentureStoryUrl,
   EmailContactUrl,
@@ -30,7 +30,7 @@ const menus = [
       CafentureStoryUrl,
       CafentureMerchantUrl,
       CafentureSpotlightsUrl,
-      CafenturePlatformUrl,
+      // CafenturePlatformUrl,
     ],
   },
   {

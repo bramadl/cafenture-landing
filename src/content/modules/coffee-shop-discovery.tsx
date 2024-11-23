@@ -11,7 +11,7 @@ export const CoffeeShopDiscoveryModule: Module = {
     title: (
       <>
         Jelajahi Ratusan <span className="text-primary">Kedai Kopi</span> yang
-        Dikurasi dan Direkomendasi Secara Personal.
+        Dikurasi dan Direkomendasi Secara Personal
       </>
     ),
   },

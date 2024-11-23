@@ -23,7 +23,9 @@ export const Navigation = () => {
         </div>
         <div className="flex items-center justify-center gap-4">
           <JoinWaitlist />
-          {/* <Button className="hidden lg:flex">Buka Aplikasi</Button> */}
+          {/* <Button asChild className="hidden lg:flex">
+            <a href="http://localhost:3001">Buka Aplikasi</a>
+          </Button> */}
           <MobileNavigationMenu />
         </div>
       </nav>

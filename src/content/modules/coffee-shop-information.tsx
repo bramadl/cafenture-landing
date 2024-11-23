@@ -11,7 +11,7 @@ export const CoffeeShopInformationModule: Module = {
     title: (
       <>
         Akses Informasi dan Profil{" "}
-        <span className="text-primary">Kedai Kopi</span> Terlengkap dan Terbaru.
+        <span className="text-primary">Kedai Kopi</span> Terlengkap dan Terbaru
       </>
     ),
   },

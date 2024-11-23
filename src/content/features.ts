@@ -140,7 +140,7 @@ export const CoffeeShopDiscoveryFeatures: Feature[] = [
     details:
       "Pengguna dapat melihat promosi eksklusif dan non-ekslusif yang hanya tersedia untuk pengguna aplikasi, seperti diskon atau penawaran khusus dari kedai kopi.",
     keyPoints: [
-      "Promosi eksklusif hanya tersedia untuk pengguna yang bergabung keanggotaan eksklusif",
+      "Promosi eksklusif hanya tersedia untuk pengguna yang bergabung keanggotaan eksklusif.",
       "Pengguna akan menerima notifikasi untuk promosi eksklusif jika mereka mengaktifkan notifikasi promosi.",
       "Promosi yang diutamakan adalah promosi terbaru dari kedai kopi berdasarkan popularitas kedai kopi per-interval.",
     ],
